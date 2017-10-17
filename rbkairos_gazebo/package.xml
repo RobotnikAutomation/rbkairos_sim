@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>rbkairos_gazebo</name>
+  <version>1.0.0</version>
+  <description>The rbkairos_gazebo package</description>
+
+  <maintainer email="rnavarro@robotnik.es">Román Navarro</maintainer>
+
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>BSD</license>
+
+
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
+  <!-- Optional attribute type can be: website, bugtracker, or repository -->
+  <!-- Example: -->
+  <!-- <url type="website">http://wiki.ros.org/rbkairos_gazebo</url> -->
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>rbkairos_description</run_depend> 
+  <run_depend>xacro</run_depend> 
+  <run_depend>hector_gazebo_plugins</run_depend> 
+  <run_depend>gazebo_plugins</run_depend> 
+
+</package>

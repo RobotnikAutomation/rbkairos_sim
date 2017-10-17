@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>rbkairos_sim</name>
+  <version>1.0.0</version>
+  <description>The rbkairos_sim package</description>
+
+  <maintainer email="rnavarro@robotnik.es">Román Navarro</maintainer>
+  <license>BSD</license>
+
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
+  <!-- Optional attribute type can be: website, bugtracker, or repository -->
+  <!-- Example: -->
+  <!-- <url type="website">http://wiki.ros.org/rbkairos_sim</url> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rbkairos_gazebo</run_depend>
+  <run_depend>rbkairos_sim_bringup</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+
+</package>
