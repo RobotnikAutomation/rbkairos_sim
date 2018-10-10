@@ -10,16 +10,16 @@
 	<arg name="launch_rviz" default="true"/>
 	<arg name="launch_robot_a" default="true"/>
 	<arg name="launch_robot_b" default="false"/>
-	<arg name="gazebo_world" default="office.world"/>
-	<arg name="localization_robot_a" default="true"/>
-	<arg name="gmapping_robot_a" default="false"/>
-	<arg name="move_base_robot_a" default="false"/>
-	<arg name="amcl_and_mapserver_a" default="false"/>
-	<arg name="move_group_robot_a" default="true"/>
+	<arg name="gazebo_world" default="test_constructa.world"/>
+	<arg name="localization_robot_a" default="false"/>
+	<arg name="gmapping_robot_a" default="true"/>
+	<arg name="move_base_robot_a" default="true"/>
+	<arg name="amcl_and_mapserver_a" default="true"/>
+	<arg name="move_group_robot_a" default="false"/>
 	<arg name="xacro_robot_a" default="rbkairos.urdf.xacro"/>
 	<arg name="xacro_robot_b" default="rbkairos.urdf.xacro"/>
 	
-	<!-- RBKAIRO GAZEBO -->
+	<!-- RBKAIROS GAZEBO -->
 	<include file="$(find rbkairos_gazebo)/launch/rbkairos_gazebo.launch">
 		<arg name="launch_rviz" value="$(arg launch_rviz)"/>
 		<arg name="launch_robot_a" value="$(arg launch_robot_a)"/>

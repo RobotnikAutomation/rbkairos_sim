@@ -18,7 +18,7 @@
 #  type: position_controllers/JointPositionController
 #  joint: joint_camera_tilt
 
-  rbkairos_control:
+  robotnik_base_control:
     type        : "diff_drive_controller/DiffDriveController"
     left_wheel  : ['rbkairos_a_front_left_wheel_joint','rbkairos_a_back_left_wheel_joint']
     right_wheel : ['rbkairos_a_front_right_wheel_joint','rbkairos_a_back_right_wheel_joint']
