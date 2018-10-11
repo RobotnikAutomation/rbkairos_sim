@@ -6,7 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-      Splitter Ratio: 0.5
+        - /TF1
+        - /TF1/Frames1
+      Splitter Ratio: 0.870316982
     Tree Height: 567
   - Class: rviz/Selection
     Name: Selection
@@ -58,54 +60,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        rbkairos_a_arm_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_arm_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_ee_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_forearm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_shoulder_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_arm_upper_arm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_wrist_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_wrist_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_arm_wrist_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         rbkairos_a_back_left_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -175,11 +129,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_link_plates:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         rbkairos_a_rear_laser_base_link:
           Alpha: 1
           Show Axes: false
@@ -189,27 +138,54 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_rear_rgbd_camera_depth_frame:
+        rbkairos_a_ur10_base:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_rear_rgbd_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_rear_rgbd_camera_link:
+        rbkairos_a_ur10_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_rear_rgbd_camera_rgb_base_link:
+        rbkairos_a_ur10_ee_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_rear_rgbd_camera_rgb_optical_frame:
+          Value: true
+        rbkairos_a_ur10_forearm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
+        rbkairos_a_ur10_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_a_ur10_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_a_ur10_upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_a_ur10_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_a_ur10_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_a_ur10_wrist_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: A RobotModel
       Robot Description: rbkairos_a/robot_description
       TF Prefix: ""
@@ -233,7 +209,7 @@ Visualization Manager:
       Max Color: 255; 255; 255
       Max Intensity: 999999
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 0
       Name: A Front LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -292,6 +268,8 @@ Visualization Manager:
         A Rear LaserScan: true
         A RobotModel: true
         Grid: true
+        Marker: true
+        TF: true
         Value: true
       Zoom Factor: 1
     - Alpha: 1
@@ -324,9 +302,143 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /visualization_marker
+      Name: Marker
+      Namespaces:
+        basic_shapes: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        ar_marker_1:
+          Value: true
+        rbkairos_a_back_left_wheel_link:
+          Value: false
+        rbkairos_a_back_right_wheel_link:
+          Value: false
+        rbkairos_a_base_docking_contact:
+          Value: false
+        rbkairos_a_base_footprint:
+          Value: false
+        rbkairos_a_base_link:
+          Value: false
+        rbkairos_a_docking_station_contact:
+          Value: true
+        rbkairos_a_docking_station_marker:
+          Value: true
+        rbkairos_a_front_laser_base_link:
+          Value: false
+        rbkairos_a_front_laser_link:
+          Value: false
+        rbkairos_a_front_left_wheel_link:
+          Value: false
+        rbkairos_a_front_rgbd_camera_depth_frame:
+          Value: false
+        rbkairos_a_front_rgbd_camera_depth_optical_frame:
+          Value: false
+        rbkairos_a_front_rgbd_camera_link:
+          Value: true
+        rbkairos_a_front_rgbd_camera_rgb_base_link:
+          Value: false
+        rbkairos_a_front_rgbd_camera_rgb_optical_frame:
+          Value: false
+        rbkairos_a_front_right_wheel_link:
+          Value: false
+        rbkairos_a_imu_link:
+          Value: false
+        rbkairos_a_map:
+          Value: false
+        rbkairos_a_odom:
+          Value: false
+        rbkairos_a_rear_laser_base_link:
+          Value: false
+        rbkairos_a_rear_laser_link:
+          Value: false
+        rbkairos_a_ur10_base:
+          Value: false
+        rbkairos_a_ur10_base_link:
+          Value: false
+        rbkairos_a_ur10_ee_link:
+          Value: false
+        rbkairos_a_ur10_forearm_link:
+          Value: false
+        rbkairos_a_ur10_shoulder_link:
+          Value: false
+        rbkairos_a_ur10_tool0:
+          Value: false
+        rbkairos_a_ur10_upper_arm_link:
+          Value: false
+        rbkairos_a_ur10_wrist_1_link:
+          Value: false
+        rbkairos_a_ur10_wrist_2_link:
+          Value: false
+        rbkairos_a_ur10_wrist_3_link:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        rbkairos_a_map:
+          {}
+        rbkairos_a_odom:
+          rbkairos_a_base_footprint:
+            rbkairos_a_base_link:
+              rbkairos_a_back_left_wheel_link:
+                {}
+              rbkairos_a_back_right_wheel_link:
+                {}
+              rbkairos_a_base_docking_contact:
+                {}
+              rbkairos_a_front_laser_base_link:
+                rbkairos_a_front_laser_link:
+                  {}
+              rbkairos_a_front_left_wheel_link:
+                {}
+              rbkairos_a_front_rgbd_camera_rgb_base_link:
+                rbkairos_a_front_rgbd_camera_depth_frame:
+                  rbkairos_a_front_rgbd_camera_depth_optical_frame:
+                    ar_marker_1:
+                      {}
+                rbkairos_a_front_rgbd_camera_link:
+                  {}
+                rbkairos_a_front_rgbd_camera_rgb_optical_frame:
+                  {}
+              rbkairos_a_front_right_wheel_link:
+                {}
+              rbkairos_a_imu_link:
+                {}
+              rbkairos_a_rear_laser_base_link:
+                rbkairos_a_rear_laser_link:
+                  {}
+              rbkairos_a_ur10_base_link:
+                rbkairos_a_ur10_base:
+                  {}
+                rbkairos_a_ur10_shoulder_link:
+                  rbkairos_a_ur10_upper_arm_link:
+                    rbkairos_a_ur10_forearm_link:
+                      rbkairos_a_ur10_wrist_1_link:
+                        rbkairos_a_ur10_wrist_2_link:
+                          rbkairos_a_ur10_wrist_3_link:
+                            rbkairos_a_ur10_ee_link:
+                              {}
+                            rbkairos_a_ur10_tool0:
+                              {}
+          rbkairos_a_docking_station_marker:
+            rbkairos_a_docking_station_contact:
+              {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
+    Default Light: true
     Fixed Frame: rbkairos_a_odom
     Frame Rate: 30
   Name: root
@@ -348,25 +460,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.69218588
+      Distance: 2.62091613
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.180346712
-        Y: 0.124068305
-        Z: 0.602060378
+        X: 1.10592747
+        Y: 0.614839792
+        Z: 0.919308305
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.240398213
+      Pitch: 0.425398052
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.02539301
+      Yaw: 1.27039433
     Saved: ~
 Window Geometry:
   A Front RGBD Camera:
@@ -376,7 +488,7 @@ Window Geometry:
   Height: 1056
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000396fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000002c6000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000260041002000460072006f006e007400200052004700420044002000430061006d00650072006101000002f4000000ca0000001600ffffff000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000396000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000004ba0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000002b900000396fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000002c6000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000260041002000460072006f006e007400200052004700420044002000430061006d00650072006101000002f4000000ca0000001600ffffff000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000396000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d006501000000000000045000000000000000000000036b0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:

@@ -37,10 +37,10 @@
 				-J rbkairos_a_ur10_elbow_joint -2
 				-J rbkairos_a_ur10_shoulder_lift_joint -0.785
 				-J rbkairos_a_ur10_shoulder_pan_joint -0.785
-				-unpause
 				-urdf
 				-param robot_description
 				 -model $(arg id_robot)
+				 -unpause
 				 " />
 		 
 		 
@@ -104,7 +104,16 @@
 		<!-- MoveGroup Moveit! -->
 		<include if="$(arg launch_move_group)" file="$(find rbkairos_a_moveit_config)/launch/move_group.launch">
 		</include>
+		
+
 	</group>
+	<!-- Docking qr launch -->
+	<remap from="/cmd_vel" to="$(arg id_robot)/robotnik_base_control/cmd_vel"/>
+	<include file="$(find robotnik_docker)/launch/summit_xls_docking.launch">
+		<arg name="prefix" value="$(arg id_robot)"/>
+		<arg name="tf_prefix" value="$(arg id_robot)_"/>
+	</include>
+	
 
 </launch>
 
