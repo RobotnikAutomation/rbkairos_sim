@@ -114,6 +114,10 @@
 		<arg name="tf_prefix" value="$(arg id_robot)_"/>
 	</include>
 	
+	<!-- Robot local control-->
+	<include file="$(find rbkairos_sim_bringup)/launch/robot_local_control/robot_local_control.launch">
+		<arg name="id_robot" value="$(arg id_robot)"/>
+	</include>
 
 </launch>
 

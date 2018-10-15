@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="id_robot" default="$(optenv ROBOT_ID rb1_base_a)"/>
+    <arg name="prefix" default="$(arg id_robot)_" />    
+
+    <arg name="debug" default="false" />
+    <arg unless="$(arg debug)" name="launch_prefix" value="" />
+    <arg     if="$(arg debug)" name="launch_prefix" value="terminator -m -x gdb --args" /> <!-- para depurar en la misma maquina -->
+
+    <group ns="$(arg id_robot)">
+        <node name="robot_local_control" pkg="robot_local_control" type="robot_local_control_node" output="screen" launch-prefix="$(arg launch_prefix)">
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/base_configuration.yaml" command="load" />
+                <param name="odom_frame" value="$(arg prefix)odom" />
+                <param name="base_frame" value="$(arg prefix)base_footprint" />
+                <param name="global_frame" value="$(arg prefix)map" />
+
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/robot_status.yaml" command="load" ns="RobotStatusComponent" />
+
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/navigation.yaml" command="load" ns="NavigationComponent"/>
+                <param name="GoToComponent/global_frame" value="$(arg prefix)map" />
+                <param name="GoToComponent/base_frame" value="$(arg prefix)base_footprint"/>
+
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/localization.yaml" command="load" ns="LocalizationComponent"/>
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/operation.yaml" command="load" ns="OperationComponent"/>
+            <rosparam file="$(find rbkairos_sim_bringup)/config/robot_local_control/control.yaml" command="load" ns="ControlComponent"/>
+            <param name="id_robot" value="$(optenv ROBOT_FMS_ID 1)" />
+        </node>
+    </group>
+    
+</launch>
