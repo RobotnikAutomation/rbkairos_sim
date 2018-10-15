@@ -523,7 +523,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>2.61057 0.52124 0.581393 0 -0 0</pose>
+      <pose frame=''>2.61057 0.52124 0.322341 0 -0 0</pose>
     </model>
     <model name='marker1_12cm_clone_0'>
       <static>1</static>
@@ -566,7 +566,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>2.60049 -1.35487 0.581393 0 -0 0</pose>
+      <pose frame=''>2.60049 -1.35487 0.322341 0 -0 0</pose>
     </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
@@ -583,6 +583,100 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-
+    <model name='unit_box_0_clone_clone_0'>
+      <pose frame=''>3.12634 2.46465 0.499996 -8e-06 -0 -3e-06</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='marker1_12cm_clone_clone'>
+      <static>1</static>
+      <link name='marker1_12cm'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.001 0.12 0.12</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://marker1_12cm/material/scripts</uri>
+              <uri>model://marker1_12cm/material/textures</uri>
+              <name>ARtrack/marker1_12cm</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.001 0.12 0.12</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>2.62421 2.53128 0.322341 0 -0 0</pose>
+    </model>
   </world>
 </sdf>
