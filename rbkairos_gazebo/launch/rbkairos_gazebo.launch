@@ -21,6 +21,7 @@
 	<arg name="x_init_pose_robot_a" default="0" />
 	<arg name="y_init_pose_robot_a" default="0" />
 	<arg name="z_init_pose_robot_a" default="0" />
+	<arg name="yaw_init_pose_robot_a" default="0"/>
 	<arg name="localization_robot_a" default="true"/>
 	<arg name="gmapping_robot_a" default="false"/>
 	<arg name="move_base_robot_a" default="false"/>
@@ -62,6 +63,7 @@
 		<arg name="x_init_pose" value="$(arg x_init_pose_robot_a)"/>
 		<arg name="y_init_pose" value="$(arg y_init_pose_robot_a)"/>
 		<arg name="z_init_pose" value="$(arg z_init_pose_robot_a)"/>
+		<arg name="yaw_init_pose" value="$(arg yaw_init_pose_robot_a)"/>
 		<arg name="xacro_robot" value="$(arg xacro_robot_a)"/>
 		<arg name="launch_robot_localization" value="$(arg localization_robot_a)"/>
 		<arg name="launch_amcl_and_mapserver" value="$(arg amcl_and_mapserver_a)"/>

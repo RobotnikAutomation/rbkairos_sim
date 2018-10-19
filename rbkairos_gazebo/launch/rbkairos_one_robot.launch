@@ -2,9 +2,12 @@
 <launch>
 	
 	<arg name="id_robot" default="rbkairos"/>
+	
 	<arg name="x_init_pose" default="0"/>
 	<arg name="y_init_pose" default="0"/>
 	<arg name="z_init_pose" default="0"/>
+	<arg name="yaw_init_pose" default="0"/>
+	
 	<arg name="xacro_robot" default="rbkairos.urdf.xacro"/>
 	<arg name="launch_robot_localization" default="false"/>
 	<arg name="launch_amcl_and_mapserver" default="true"/>
@@ -34,6 +37,7 @@
 		 args="-x $(arg x_init_pose)
 				-y $(arg y_init_pose)
 				-z $(arg z_init_pose)
+				-Y $(arg yaw_init_pose)
 				-J rbkairos_a_ur10_elbow_joint -2
 				-J rbkairos_a_ur10_shoulder_lift_joint -0.785
 				-J rbkairos_a_ur10_shoulder_pan_joint -0.785
@@ -104,20 +108,10 @@
 		<!-- MoveGroup Moveit! -->
 		<include if="$(arg launch_move_group)" file="$(find rbkairos_a_moveit_config)/launch/move_group.launch">
 		</include>
-		
 
 	</group>
-	<!-- Docking qr launch -->
-	<remap from="/cmd_vel" to="$(arg id_robot)/robotnik_base_control/cmd_vel"/>
-	<include file="$(find robotnik_docker)/launch/summit_xls_docking.launch">
-		<arg name="prefix" value="$(arg id_robot)"/>
-		<arg name="tf_prefix" value="$(arg id_robot)_"/>
-	</include>
 	
-	<!-- Robot local control-->
-	<include file="$(find rbkairos_sim_bringup)/launch/robot_local_control/robot_local_control.launch">
-		<arg name="id_robot" value="$(arg id_robot)"/>
-	</include>
+
 
 </launch>
 

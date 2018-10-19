@@ -239,7 +239,7 @@ Visualization Manager:
       Max Color: 255; 255; 255
       Max Intensity: 999999
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 0
       Name: A Rear LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -315,7 +315,9 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        ar_marker_1:
+        ar_marker_2:
+          Value: true
+        marker_2:
           Value: true
         rbkairos_a_back_left_wheel_link:
           Value: false
@@ -386,7 +388,8 @@ Visualization Manager:
       Show Names: true
       Tree:
         rbkairos_a_map:
-          {}
+          marker_2:
+            {}
         rbkairos_a_odom:
           rbkairos_a_base_footprint:
             rbkairos_a_base_link:
@@ -404,7 +407,7 @@ Visualization Manager:
               rbkairos_a_front_rgbd_camera_rgb_base_link:
                 rbkairos_a_front_rgbd_camera_depth_frame:
                   rbkairos_a_front_rgbd_camera_depth_optical_frame:
-                    ar_marker_1:
+                    ar_marker_2:
                       {}
                 rbkairos_a_front_rgbd_camera_link:
                   {}
@@ -430,9 +433,6 @@ Visualization Manager:
                               {}
                             rbkairos_a_ur10_tool0:
                               {}
-          rbkairos_a_docking_station_marker:
-            rbkairos_a_docking_station_contact:
-              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -460,25 +460,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.62091613
+      Distance: 1.73031867
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.10592747
-        Y: 0.614839792
-        Z: 0.919308305
+        X: 1.67562771
+        Y: 0.232199296
+        Z: 1.35396814
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.425398052
+      Pitch: 0.14539811
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.27039433
+      Yaw: 5.01858044
     Saved: ~
 Window Geometry:
   A Front RGBD Camera:

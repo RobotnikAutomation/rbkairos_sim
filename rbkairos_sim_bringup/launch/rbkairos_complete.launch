@@ -10,7 +10,7 @@
 	<arg name="launch_rviz" default="true"/>
 	<arg name="launch_robot_a" default="true"/>
 	<arg name="launch_robot_b" default="false"/>
-	<arg name="gazebo_world" default="test_constructa.world"/>
+	<arg name="gazebo_world" default="office.world"/>
 	<arg name="localization_robot_a" default="false"/>
 	<arg name="gmapping_robot_a" default="true"/>
 	<arg name="move_base_robot_a" default="true"/>
@@ -18,6 +18,10 @@
 	<arg name="move_group_robot_a" default="false"/>
 	<arg name="xacro_robot_a" default="rbkairos.urdf.xacro"/>
 	<arg name="xacro_robot_b" default="rbkairos.urdf.xacro"/>
+	<arg name="x_init_pose_robot_a" default="0" />
+	<arg name="y_init_pose_robot_a" default="0" />
+	<arg name="z_init_pose_robot_a" default="0" />
+	<arg name="yaw_init_pose_robot_a" default="0" />
 	
 	<!-- RBKAIROS GAZEBO -->
 	<include file="$(find rbkairos_gazebo)/launch/rbkairos_gazebo.launch">
@@ -34,6 +38,12 @@
 	
 		<arg name="launch_robot_b" value="$(arg launch_robot_b)"/>
 		<arg name="xacro_robot_b" value="$(arg xacro_robot_b)"/>
+		
+		
+		<arg name="x_init_pose_robot_a" value="$(arg x_init_pose_robot_a)"/>
+		<arg name="y_init_pose_robot_a" value="$(arg y_init_pose_robot_a)"/>
+		<arg name="z_init_pose_robot_a" value="$(arg z_init_pose_robot_a)"/>
+		<arg name="yaw_init_pose_robot_a" value="$(arg yaw_init_pose_robot_a)"/>
 	</include>
 	
 	

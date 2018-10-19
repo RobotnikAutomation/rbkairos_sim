@@ -15,8 +15,8 @@ GoToComponent:
   type: robot_local_control_procedures/GoToMoveBase
   desired_freq: 5.0
   action_namespace: move_base
-  global_frame: rb2_map
-  base_frame: rb2_base_footprint
+  global_frame: rbkairos_a_map
+  base_frame: rbkairos_a_base_footprint
   default_yaw_tolerance: 0.1 # when goal has orientation. if orientation is invalid, goal tolerance is changed to 3.14
 
 PickComponent:
@@ -46,8 +46,11 @@ PlaceComponent:
 ChargeComponent:
   type: robot_local_control_procedures/Charge
   desired_freq: 1.0
-  docker_namespace: charge_docker
+  docker_namespace: docker
+  dock_frame: rbkairos_a_docking_station_contact
+  robot_dock_frame: rbkairos_a_front_rgbd_camera_link
   move_namespace: move
+  has_laser_security: false
   wait_for_ack: true # now it is being used as a flag to enable charging on rb2
   # todo: offset should come here
 

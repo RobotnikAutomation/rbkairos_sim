@@ -525,6 +525,49 @@
       </link>
       <pose frame=''>2.61057 0.52124 0.322341 0 -0 0</pose>
     </model>
+    <model name='marker2_12cm'>
+      <static>1</static>
+      <link name='marker2_12cm'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.001 0.12 0.12</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://marker2_12cm/material/scripts</uri>
+              <uri>model://marker2_12cm/material/textures</uri>
+              <name>ARtrack/marker2_12cm</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.001 0.12 0.12</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.05 5.467 0.322341 0 0 1.5467</pose>
+    </model>
     <model name='marker1_12cm_clone_0'>
       <static>1</static>
       <link name='marker1_12cm'>
