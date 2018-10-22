@@ -721,5 +721,10 @@
       </link>
       <pose frame=''>2.62421 2.53128 0.322341 0 -0 0</pose>
     </model>
+    <gui>
+    <camera name="gzclient_camera">
+      <pose>0.655 -2.358 3.037 0 0.576 1.4842</pose>
+    </camera>
+   </gui>
   </world>
 </sdf>
