@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- arg to config the launch file-->
-	
+
 	<!--launch_navigation and launch_navigation_nomap args are exclusive
 	and they are (or not) launched for all robots-->
 	<arg name="launch_rviz" default="true"/>
@@ -17,7 +17,7 @@
 
 	<!--params of the different robots-->
 	<!-- robot a -->
-	<arg name="id_robot_a" default="rbkairos_a"/>
+	<arg name="id_robot_a" default="rbkairos"/>
 	<arg name="x_init_pose_robot_a" default="0" />
 	<arg name="y_init_pose_robot_a" default="0" />
 	<arg name="z_init_pose_robot_a" default="0" />
@@ -29,7 +29,7 @@
 	<arg name="map_file_a" default="$(arg default_map)"/>
 	<arg name="xacro_robot_a" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_a" default="false"/>
-	
+
 	<!-- robot b -->
 	<arg name="id_robot_b" default="rbkairos_b"/>
 	<arg name="x_init_pose_robot_b" default="0" />
@@ -42,7 +42,7 @@
 	<arg name="map_file_b" default="$(arg default_map)"/>
 	<arg name="xacro_robot_b" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_b" default="false"/>
-	
+
 	<!-- robot c -->
 	<arg name="id_robot_c" default="rbkairos_c"/>
 	<arg name="x_init_pose_robot_c" default="0" />
@@ -55,8 +55,8 @@
 	<arg name="map_file_c" default="$(arg default_map)"/>
 	<arg name="xacro_robot_c" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_c" default="false"/>
-	
-	
+
+
 	<!--BEGIN ROBOT 1-->
 	<include if="$(arg launch_robot_a)" file="$(find rbkairos_gazebo)/launch/rbkairos_one_robot.launch">
 		<arg name="id_robot" value="$(arg id_robot_a)"/>
@@ -73,7 +73,7 @@
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
 		<arg name="launch_move_group" value="$(arg move_group_robot_a)"/>
 	</include>
-	
+
 	<!--BEGIN ROBOT 2-->
 	<include if="$(arg launch_robot_b)" file="$(find rbkairos_gazebo)/launch/rbkairos_one_robot.launch">
 		<arg name="id_robot" value="$(arg id_robot_b)"/>
@@ -103,17 +103,13 @@
  		<arg name="launch_move_base" value="$(arg move_base_robot_c)"/>
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
 	</include>
-	
-	
+
+
 	<!-- gazebo simulation and rviz visualization-->
-	<include file="$(find rbkairos_gazebo)/launch/gazebo_rviz.launch">		
+	<include file="$(find rbkairos_gazebo)/launch/gazebo_rviz.launch">
 		<arg name="launch_rviz" value="$(arg launch_rviz)"/>
 		<arg name="world" value="$(arg gazebo_world)"/>
 		<arg name="debug" value="$(arg debug)"/>
 	</include>
-  
-</launch>	
-	
 
-
-	
+</launch>
