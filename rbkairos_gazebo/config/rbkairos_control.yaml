@@ -64,12 +64,12 @@
   arm_controller:
     type: position_controllers/JointTrajectoryController
     joints:
-       - rbkairos_arm_shoulder_pan_joint
-       - rbkairos_arm_shoulder_lift_joint
-       - rbkairos_arm_elbow_joint
-       - rbkairos_arm_wrist_1_joint
-       - rbkairos_arm_wrist_2_joint
-       - rbkairos_arm_wrist_3_joint
+       - rbkairos_ur10_shoulder_pan_joint
+       - rbkairos_ur10_shoulder_lift_joint
+       - rbkairos_ur10_elbow_joint
+       - rbkairos_ur10_wrist_1_joint
+       - rbkairos_ur10_wrist_2_joint
+       - rbkairos_ur10_wrist_3_joint
     constraints:
         goal_time: 0.6
         stopped_velocity_tolerance: 0.05

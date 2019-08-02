@@ -16,6 +16,8 @@
 	<arg name="map_file" default="empty/empty.yaml"/>
 	<arg name="robot_localization_mode" default="odom"/><!-- odom, complete (including gps)-->
 	<arg name="ros_planar_move_plugin" default="true"/><!-- plugin to simulate omni drive -->
+	
+	<arg name="launch_arm" default="true"/>	<!-- moveit -->	
 	<arg name="launch_move_group" default="false"/>	<!-- moveit -->	
 	<arg name="has_safety_module" default="false"/>
 	<arg name="odom_model_type" default="omni"/>
@@ -62,6 +64,10 @@
 		<node if="$(arg ros_planar_move_plugin)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
 		   output="screen" args="
                       joint_read_state_controller"/>
+		      
+		<node if="$(arg launch_arm)" name="controller_spawner_" pkg="controller_manager" type="spawner" respawn="false"
+		   output="screen" args="
+                      arm_controller"/>
 					  
 		<node pkg="twist_mux" type="twist_mux" name="twist_mux">
 			<rosparam command="load" file="$(find summit_xl_control)/config/twist_mux.yaml" />
