@@ -6,11 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1
         - /TF1/Frames1
-        - /Map1
       Splitter Ratio: 0.644578338
-    Tree Height: 567
+    Tree Height: 558
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -30,6 +28,8 @@ Panels:
     Name: Time
     SyncMode: 0
     SyncSource: A Front LaserScan
+Toolbars:
+  toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
@@ -61,134 +61,134 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        rbkairos_a_back_left_wheel_link:
+        rbkairos_back_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_back_right_wheel_link:
+        rbkairos_back_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_base_docking_contact:
+        rbkairos_base_docking_contact:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_base_link:
+        rbkairos_base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_front_laser_base_link:
+        rbkairos_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_front_laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_front_left_wheel_link:
+        rbkairos_front_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_front_rgbd_camera_depth_frame:
+        rbkairos_front_laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_front_rgbd_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_front_rgbd_camera_link:
+        rbkairos_front_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_front_rgbd_camera_rgb_base_link:
+        rbkairos_front_rgbd_camera_depth_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_front_rgbd_camera_rgb_optical_frame:
+        rbkairos_front_rgbd_camera_depth_optical_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_a_front_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rbkairos_a_imu_link:
+        rbkairos_front_rgbd_camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_rear_laser_base_link:
+        rbkairos_front_rgbd_camera_rgb_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_rgbd_camera_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_rear_laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_ur10_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_ur10_base_link:
+        rbkairos_imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_ee_link:
+        rbkairos_rear_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_forearm_link:
+        rbkairos_rear_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur10_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur10_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_shoulder_link:
+        rbkairos_ur10_ee_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_a_ur10_upper_arm_link:
+        rbkairos_ur10_forearm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_wrist_1_link:
+        rbkairos_ur10_shoulder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_wrist_2_link:
+        rbkairos_ur10_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur10_upper_arm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_a_ur10_wrist_3_link:
+        rbkairos_ur10_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_ur10_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_ur10_wrist_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
       Name: A RobotModel
-      Robot Description: rbkairos_a/robot_description
+      Robot Description: rbkairos/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -208,7 +208,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 999999
+      Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: A Front LaserScan
@@ -216,9 +216,9 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.0299999993
       Style: Flat Squares
-      Topic: /rbkairos_a/front_laser/scan
+      Topic: /rbkairos/front_laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -238,7 +238,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 999999
+      Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: A Rear LaserScan
@@ -246,9 +246,9 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.0299999993
       Style: Flat Squares
-      Topic: /rbkairos_a/rear_laser/scan
+      Topic: /rbkairos/rear_laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -256,7 +256,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /rbkairos_a/front_rgbd_camera/rgb/image_raw
+      Image Topic: /rbkairos/front_rgbd_camera/rgb/image_raw
       Name: A Front RGBD Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -268,11 +268,16 @@ Visualization Manager:
         A Front PointCloud: true
         A Rear LaserScan: true
         A RobotModel: true
+        A amcl particles: true
         Grid: true
         Map: true
         Marker: true
         TF: true
         Value: true
+        global_costmap: true
+        global_plan: true
+        local_costmap: true
+        local_plan: true
       Zoom Factor: 1
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -299,7 +304,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.00999999978
       Style: Flat Squares
-      Topic: /rbkairos_a/front_rgbd_camera/depth/points
+      Topic: /rbkairos/front_rgbd_camera/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -309,7 +314,7 @@ Visualization Manager:
       Marker Topic: /visualization_marker
       Name: Marker
       Namespaces:
-        basic_shapes: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/TF
@@ -317,121 +322,113 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        ar_marker_2:
+        rbkairos_back_left_wheel_link:
           Value: true
-        rbkairos_a_back_left_wheel_link:
-          Value: false
-        rbkairos_a_back_right_wheel_link:
-          Value: false
-        rbkairos_a_base_docking_contact:
-          Value: false
-        rbkairos_a_base_footprint:
-          Value: false
-        rbkairos_a_base_link:
-          Value: false
-        rbkairos_a_docking_station_contact:
+        rbkairos_back_right_wheel_link:
           Value: true
-        rbkairos_a_docking_station_marker:
+        rbkairos_base_docking_contact:
           Value: true
-        rbkairos_a_front_laser_base_link:
-          Value: false
-        rbkairos_a_front_laser_link:
-          Value: false
-        rbkairos_a_front_left_wheel_link:
-          Value: false
-        rbkairos_a_front_rgbd_camera_depth_frame:
-          Value: false
-        rbkairos_a_front_rgbd_camera_depth_optical_frame:
-          Value: false
-        rbkairos_a_front_rgbd_camera_link:
+        rbkairos_base_footprint:
           Value: true
-        rbkairos_a_front_rgbd_camera_rgb_base_link:
-          Value: false
-        rbkairos_a_front_rgbd_camera_rgb_optical_frame:
-          Value: false
-        rbkairos_a_front_right_wheel_link:
-          Value: false
-        rbkairos_a_imu_link:
-          Value: false
-        rbkairos_a_map:
-          Value: false
-        rbkairos_a_odom:
-          Value: false
-        rbkairos_a_rear_laser_base_link:
-          Value: false
-        rbkairos_a_rear_laser_link:
-          Value: false
-        rbkairos_a_ur10_base:
-          Value: false
-        rbkairos_a_ur10_base_link:
-          Value: false
-        rbkairos_a_ur10_ee_link:
-          Value: false
-        rbkairos_a_ur10_forearm_link:
-          Value: false
-        rbkairos_a_ur10_shoulder_link:
-          Value: false
-        rbkairos_a_ur10_tool0:
-          Value: false
-        rbkairos_a_ur10_upper_arm_link:
-          Value: false
-        rbkairos_a_ur10_wrist_1_link:
-          Value: false
-        rbkairos_a_ur10_wrist_2_link:
-          Value: false
-        rbkairos_a_ur10_wrist_3_link:
-          Value: false
+        rbkairos_base_link:
+          Value: true
+        rbkairos_front_laser_base_link:
+          Value: true
+        rbkairos_front_laser_link:
+          Value: true
+        rbkairos_front_left_wheel_link:
+          Value: true
+        rbkairos_front_rgbd_camera_depth_frame:
+          Value: true
+        rbkairos_front_rgbd_camera_depth_optical_frame:
+          Value: true
+        rbkairos_front_rgbd_camera_link:
+          Value: true
+        rbkairos_front_rgbd_camera_rgb_base_link:
+          Value: true
+        rbkairos_front_rgbd_camera_rgb_optical_frame:
+          Value: true
+        rbkairos_front_right_wheel_link:
+          Value: true
+        rbkairos_imu_link:
+          Value: true
+        rbkairos_map:
+          Value: true
+        rbkairos_odom:
+          Value: true
+        rbkairos_rear_laser_base_link:
+          Value: true
+        rbkairos_rear_laser_link:
+          Value: true
+        rbkairos_ur10_base:
+          Value: true
+        rbkairos_ur10_base_link:
+          Value: true
+        rbkairos_ur10_ee_link:
+          Value: true
+        rbkairos_ur10_forearm_link:
+          Value: true
+        rbkairos_ur10_shoulder_link:
+          Value: true
+        rbkairos_ur10_tool0:
+          Value: true
+        rbkairos_ur10_upper_arm_link:
+          Value: true
+        rbkairos_ur10_wrist_1_link:
+          Value: true
+        rbkairos_ur10_wrist_2_link:
+          Value: true
+        rbkairos_ur10_wrist_3_link:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        rbkairos_a_map:
-          {}
-        rbkairos_a_odom:
-          rbkairos_a_base_footprint:
-            rbkairos_a_base_link:
-              rbkairos_a_back_left_wheel_link:
-                {}
-              rbkairos_a_back_right_wheel_link:
-                {}
-              rbkairos_a_base_docking_contact:
-                {}
-              rbkairos_a_front_laser_base_link:
-                rbkairos_a_front_laser_link:
+        rbkairos_map:
+          rbkairos_odom:
+            rbkairos_base_footprint:
+              rbkairos_base_link:
+                rbkairos_back_left_wheel_link:
                   {}
-              rbkairos_a_front_left_wheel_link:
-                {}
-              rbkairos_a_front_rgbd_camera_rgb_base_link:
-                rbkairos_a_front_rgbd_camera_depth_frame:
-                  rbkairos_a_front_rgbd_camera_depth_optical_frame:
-                    ar_marker_2:
+                rbkairos_back_right_wheel_link:
+                  {}
+                rbkairos_base_docking_contact:
+                  {}
+                rbkairos_front_laser_base_link:
+                  rbkairos_front_laser_link:
+                    {}
+                rbkairos_front_left_wheel_link:
+                  {}
+                rbkairos_front_rgbd_camera_rgb_base_link:
+                  rbkairos_front_rgbd_camera_depth_frame:
+                    rbkairos_front_rgbd_camera_depth_optical_frame:
                       {}
-                rbkairos_a_front_rgbd_camera_link:
+                  rbkairos_front_rgbd_camera_link:
+                    {}
+                  rbkairos_front_rgbd_camera_rgb_optical_frame:
+                    {}
+                rbkairos_front_right_wheel_link:
                   {}
-                rbkairos_a_front_rgbd_camera_rgb_optical_frame:
+                rbkairos_imu_link:
                   {}
-              rbkairos_a_front_right_wheel_link:
-                {}
-              rbkairos_a_imu_link:
-                {}
-              rbkairos_a_rear_laser_base_link:
-                rbkairos_a_rear_laser_link:
-                  {}
-              rbkairos_a_ur10_base_link:
-                rbkairos_a_ur10_base:
-                  {}
-                rbkairos_a_ur10_shoulder_link:
-                  rbkairos_a_ur10_upper_arm_link:
-                    rbkairos_a_ur10_forearm_link:
-                      rbkairos_a_ur10_wrist_1_link:
-                        rbkairos_a_ur10_wrist_2_link:
-                          rbkairos_a_ur10_wrist_3_link:
-                            rbkairos_a_ur10_ee_link:
-                              {}
-                            rbkairos_a_ur10_tool0:
-                              {}
+                rbkairos_rear_laser_base_link:
+                  rbkairos_rear_laser_link:
+                    {}
+                rbkairos_ur10_base_link:
+                  rbkairos_ur10_base:
+                    {}
+                  rbkairos_ur10_shoulder_link:
+                    rbkairos_ur10_upper_arm_link:
+                      rbkairos_ur10_forearm_link:
+                        rbkairos_ur10_wrist_1_link:
+                          rbkairos_ur10_wrist_2_link:
+                            rbkairos_ur10_wrist_3_link:
+                              rbkairos_ur10_ee_link:
+                                {}
+                              rbkairos_ur10_tool0:
+                                {}
       Update Interval: 0
       Value: true
     - Alpha: 0.699999988
@@ -440,15 +437,97 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: /rbkairos_a/map
+      Topic: /rbkairos/map
       Unreliable: false
       Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Arrow Length: 0.300000012
+      Axes Length: 0.300000012
+      Axes Radius: 0.00999999978
+      Class: rviz/PoseArray
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.0700000003
+      Head Radius: 0.0299999993
+      Name: A amcl particles
+      Shaft Length: 0.230000004
+      Shaft Radius: 0.00999999978
+      Shape: Arrow (Flat)
+      Topic: /rbkairos/particlecloud
+      Unreliable: false
+      Value: true
+    - Alpha: 0.699999988
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: global_costmap
+      Topic: /rbkairos/move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 0.699999988
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: local_costmap
+      Topic: /rbkairos/move_base/local_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.300000012
+      Head Length: 0.200000003
+      Length: 0.300000012
+      Line Style: Lines
+      Line Width: 0.0299999993
+      Name: global_plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.0299999993
+      Shaft Diameter: 0.100000001
+      Shaft Length: 0.100000001
+      Topic: /rbkairos/move_base/TebLocalPlannerROS/global_plan
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 255; 85; 0
+      Enabled: true
+      Head Diameter: 0.300000012
+      Head Length: 0.200000003
+      Length: 0.300000012
+      Line Style: Billboards
+      Line Width: 0.0299999993
+      Name: local_plan
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.0299999993
+      Shaft Diameter: 0.100000001
+      Shaft Length: 0.100000001
+      Topic: /rbkairos/move_base/TebLocalPlannerROS/local_plan
+      Unreliable: false
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: rbkairos_a_map
+    Fixed Frame: rbkairos_map
     Frame Rate: 30
   Name: root
   Tools:
@@ -459,9 +538,9 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
-      Topic: /initialpose
+      Topic: rbkairos/initialpose
     - Class: rviz/SetGoal
-      Topic: /move_base_simple/goal
+      Topic: rbkairos/move_base_simple/goal
     - Class: rviz/PublishPoint
       Single click: true
       Topic: /clicked_point
@@ -469,7 +548,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 13.8759651
+      Distance: 7.73922253
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -484,20 +563,20 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.340398073
+      Pitch: 0.690397859
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.45357943
+      Yaw: 4.54357624
     Saved: ~
 Window Geometry:
   A Front RGBD Camera:
     collapsed: false
   Displays:
     collapsed: false
-  Height: 1056
+  Height: 1053
   Hide Left Dock: false
-  Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000003f300000396fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000002c6000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000260041002000460072006f006e007400200052004700420044002000430061006d00650072006101000002f4000000ca0000001600ffffff000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000396000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000002310000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd0000000400000000000001ef0000038efc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006200fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002b000002c0000000da00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000260041002000460072006f006e007400200052004700420044002000430061006d00650072006101000002f1000000c80000001700ffffff000000010000010f0000038efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002b0000038e000000b200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007370000003efc0100000002fb0000000800540069006d00650100000000000007370000035200fffffffb0000000800540069006d00650100000000000004500000000000000000000005420000038e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -505,7 +584,7 @@ Window Geometry:
   Tool Properties:
     collapsed: false
   Views:
-    collapsed: false
-  Width: 1855
-  X: 65
-  Y: 24
+    collapsed: true
+  Width: 1847
+  X: 73
+  Y: 27

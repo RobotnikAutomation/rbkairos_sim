@@ -12,7 +12,7 @@
 	<arg name="launch_robot_b" default="false"/>
 	<arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
 	<arg name="localization_robot_a" default="false"/>
-	<arg name="gmapping_robot_a" default="true"/>
+	<arg name="gmapping_robot_a" default="false"/>
 	<arg name="move_base_robot_a" default="true"/>
 	<arg name="amcl_and_mapserver_a" default="true"/>
 	<arg name="move_group_robot_a" default="false"/>
