@@ -114,7 +114,7 @@
 		</include>
 		
 		<!-- MoveGroup Moveit! -->
-		<include if="$(arg launch_move_group)" file="$(find rbkairos_a_moveit_config)/launch/move_group.launch">
+		<include if="$(arg launch_move_group)" file="$(find rbkairos_10_moveit_config)/launch/rbkairos_10_moveit_config.launch">
 		</include>
 
 	</group>
