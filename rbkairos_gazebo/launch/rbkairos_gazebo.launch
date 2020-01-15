@@ -17,7 +17,7 @@
 
 	<!--params of the different robots-->
 	<!-- robot a -->
-	<arg name="id_robot_a" default="rbkairos"/>
+	<arg name="id_robot_a" default="robot"/>
 	<arg name="x_init_pose_robot_a" default="0" />
 	<arg name="y_init_pose_robot_a" default="0" />
 	<arg name="z_init_pose_robot_a" default="0" />
@@ -29,9 +29,11 @@
 	<arg name="map_file_a" default="$(arg default_map)"/>
 	<arg name="xacro_robot_a" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_a" default="false"/>
+	<arg name="launch_pad_a" default="false"/>
+
 
 	<!-- robot b -->
-	<arg name="id_robot_b" default="rbkairos_b"/>
+	<arg name="id_robot_b" default="robot_b"/>
 	<arg name="x_init_pose_robot_b" default="0" />
 	<arg name="y_init_pose_robot_b" default="1" />
 	<arg name="z_init_pose_robot_b" default="0" />
@@ -42,9 +44,10 @@
 	<arg name="map_file_b" default="$(arg default_map)"/>
 	<arg name="xacro_robot_b" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_b" default="false"/>
+	<arg name="launch_pad_b" default="false"/>
 
 	<!-- robot c -->
-	<arg name="id_robot_c" default="rbkairos_c"/>
+	<arg name="id_robot_c" default="robot_c"/>
 	<arg name="x_init_pose_robot_c" default="0" />
 	<arg name="y_init_pose_robot_c" default="2" />
 	<arg name="z_init_pose_robot_c" default="0" />
@@ -55,6 +58,7 @@
 	<arg name="map_file_c" default="$(arg default_map)"/>
 	<arg name="xacro_robot_c" default="$(arg default_xacro)"/>
 	<arg name="move_group_robot_c" default="false"/>
+	<arg name="launch_pad_c" default="false"/>
 
 
 	<!--BEGIN ROBOT 1-->
@@ -72,6 +76,7 @@
  		<arg name="launch_move_base" value="$(arg move_base_robot_a)"/>
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
 		<arg name="launch_move_group" value="$(arg move_group_robot_a)"/>
+		<arg name="launch_pad" value="$(arg launch_pad_a)"/>
 	</include>
 
 	<!--BEGIN ROBOT 2-->
@@ -87,6 +92,7 @@
 		<arg name="map_file" value="$(arg map_file_b)"/>
  		<arg name="launch_move_base" value="$(arg move_base_robot_b)"/>
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+		<arg name="launch_pad" value="$(arg launch_pad_b)"/>
 	</include>
 
 	<!--BEGIN ROBOT 3-->
@@ -102,6 +108,7 @@
 		<arg name="map_file" value="$(arg map_file_c)"/>
  		<arg name="launch_move_base" value="$(arg move_base_robot_c)"/>
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+		<arg name="launch_pad" value="$(arg launch_pad_c)"/>
 	</include>
 
 

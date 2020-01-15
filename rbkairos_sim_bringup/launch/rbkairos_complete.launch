@@ -22,7 +22,8 @@
 	<arg name="y_init_pose_robot_a" default="0" />
 	<arg name="z_init_pose_robot_a" default="0" />
 	<arg name="yaw_init_pose_robot_a" default="0" />
-	
+	<arg name="launch_pad_a" default="true"/>
+
 	<!-- RBKAIROS GAZEBO -->
 	<include file="$(find rbkairos_gazebo)/launch/rbkairos_gazebo.launch">
 		<arg name="launch_rviz" value="$(arg launch_rviz)"/>
@@ -35,16 +36,18 @@
 		<arg name="xacro_robot_a" value="$(arg xacro_robot_a)"/>
 		<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
 		<arg name="move_group_robot_a" value="$(arg move_group_robot_a)"/>
-	
+
 		<arg name="launch_robot_b" value="$(arg launch_robot_b)"/>
 		<arg name="xacro_robot_b" value="$(arg xacro_robot_b)"/>
-		
-		
+
+
 		<arg name="x_init_pose_robot_a" value="$(arg x_init_pose_robot_a)"/>
 		<arg name="y_init_pose_robot_a" value="$(arg y_init_pose_robot_a)"/>
 		<arg name="z_init_pose_robot_a" value="$(arg z_init_pose_robot_a)"/>
 		<arg name="yaw_init_pose_robot_a" value="$(arg yaw_init_pose_robot_a)"/>
+		<arg name="launch_pad_a" value="$(arg launch_pad_a)"/>
+
 	</include>
-	
-	
+
+
 </launch>

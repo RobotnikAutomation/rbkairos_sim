@@ -61,134 +61,159 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        rbkairos_back_left_wheel_link:
+        robot_back_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_back_right_wheel_link:
+        robot_back_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_base_docking_contact:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_base_footprint:
+        robot_base_chapa:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_base_link:
+        robot_base_docking_contact:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_front_laser_base_link:
+        robot_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_front_laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_front_left_wheel_link:
+        robot_base_logo_front:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_front_rgbd_camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_front_rgbd_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_front_rgbd_camera_link:
+        robot_base_logo_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_front_rgbd_camera_rgb_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_front_rgbd_camera_rgb_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_front_right_wheel_link:
+        robot_base_logo_rear:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_imu_link:
+        robot_base_logo_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_rear_laser_base_link:
+        robot_front_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_rear_laser_link:
+        robot_front_laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rbkairos_ur10_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_ur10_base_link:
+        robot_front_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_ee_link:
+        robot_front_rgbd_camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_front_rgbd_camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_front_rgbd_camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_forearm_link:
+        robot_front_rgbd_camera_rgb_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_front_rgbd_camera_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_front_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_shoulder_link:
+        robot_imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rbkairos_ur10_upper_arm_link:
+        robot_rear_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_wrist_1_link:
+        robot_rear_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_ur10_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_ur10_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_wrist_2_link:
+        robot_ur10_ee_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rbkairos_ur10_wrist_3_link:
+        robot_ur10_forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_ur10_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_ur10_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        robot_ur10_upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_ur10_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_ur10_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robot_ur10_wrist_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
       Name: A RobotModel
-      Robot Description: rbkairos/robot_description
+      Robot Description: robot/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -218,7 +243,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.0299999993
       Style: Flat Squares
-      Topic: /rbkairos/front_laser/scan
+      Topic: /robot/front_laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -248,7 +273,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.0299999993
       Style: Flat Squares
-      Topic: /rbkairos/rear_laser/scan
+      Topic: /robot/rear_laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -256,7 +281,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /rbkairos/front_rgbd_camera/rgb/image_raw
+      Image Topic: /robot/front_rgbd_camera/depth/image_raw
       Name: A Front RGBD Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -304,14 +329,14 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.00999999978
       Style: Flat Squares
-      Topic: /rbkairos/front_rgbd_camera/depth/points
+      Topic: /robot/front_rgbd_camera/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /visualization_marker
+      Marker Topic: /robot/move_base/TebLocalPlannerROS/teb_markers
       Name: Marker
       Namespaces:
         {}
@@ -322,63 +347,73 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        rbkairos_back_left_wheel_link:
+        robot_back_left_wheel_link:
           Value: true
-        rbkairos_back_right_wheel_link:
+        robot_back_right_wheel_link:
           Value: true
-        rbkairos_base_docking_contact:
+        robot_base_chapa:
           Value: true
-        rbkairos_base_footprint:
+        robot_base_docking_contact:
           Value: true
-        rbkairos_base_link:
+        robot_base_footprint:
           Value: true
-        rbkairos_front_laser_base_link:
+        robot_base_link:
           Value: true
-        rbkairos_front_laser_link:
+        robot_base_logo_front:
           Value: true
-        rbkairos_front_left_wheel_link:
+        robot_base_logo_left:
           Value: true
-        rbkairos_front_rgbd_camera_depth_frame:
+        robot_base_logo_rear:
           Value: true
-        rbkairos_front_rgbd_camera_depth_optical_frame:
+        robot_base_logo_right:
           Value: true
-        rbkairos_front_rgbd_camera_link:
+        robot_front_laser_base_link:
           Value: true
-        rbkairos_front_rgbd_camera_rgb_base_link:
+        robot_front_laser_link:
           Value: true
-        rbkairos_front_rgbd_camera_rgb_optical_frame:
+        robot_front_left_wheel_link:
           Value: true
-        rbkairos_front_right_wheel_link:
+        robot_front_rgbd_camera_depth_frame:
           Value: true
-        rbkairos_imu_link:
+        robot_front_rgbd_camera_depth_optical_frame:
           Value: true
-        rbkairos_map:
+        robot_front_rgbd_camera_link:
           Value: true
-        rbkairos_odom:
+        robot_front_rgbd_camera_rgb_base_link:
           Value: true
-        rbkairos_rear_laser_base_link:
+        robot_front_rgbd_camera_rgb_optical_frame:
           Value: true
-        rbkairos_rear_laser_link:
+        robot_front_right_wheel_link:
           Value: true
-        rbkairos_ur10_base:
+        robot_imu_link:
           Value: true
-        rbkairos_ur10_base_link:
+        robot_map:
           Value: true
-        rbkairos_ur10_ee_link:
+        robot_odom:
           Value: true
-        rbkairos_ur10_forearm_link:
+        robot_rear_laser_base_link:
           Value: true
-        rbkairos_ur10_shoulder_link:
+        robot_rear_laser_link:
           Value: true
-        rbkairos_ur10_tool0:
+        robot_ur10_base:
           Value: true
-        rbkairos_ur10_upper_arm_link:
+        robot_ur10_base_link:
           Value: true
-        rbkairos_ur10_wrist_1_link:
+        robot_ur10_ee_link:
           Value: true
-        rbkairos_ur10_wrist_2_link:
+        robot_ur10_forearm_link:
           Value: true
-        rbkairos_ur10_wrist_3_link:
+        robot_ur10_shoulder_link:
+          Value: true
+        robot_ur10_tool0:
+          Value: true
+        robot_ur10_upper_arm_link:
+          Value: true
+        robot_ur10_wrist_1_link:
+          Value: true
+        robot_ur10_wrist_2_link:
+          Value: true
+        robot_ur10_wrist_3_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -386,48 +421,58 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        rbkairos_map:
-          rbkairos_odom:
-            rbkairos_base_footprint:
-              rbkairos_base_link:
-                rbkairos_back_left_wheel_link:
+        robot_map:
+          robot_odom:
+            robot_base_footprint:
+              robot_base_link:
+                robot_back_left_wheel_link:
                   {}
-                rbkairos_back_right_wheel_link:
+                robot_back_right_wheel_link:
                   {}
-                rbkairos_base_docking_contact:
+                robot_base_chapa:
                   {}
-                rbkairos_front_laser_base_link:
-                  rbkairos_front_laser_link:
+                robot_base_docking_contact:
+                  {}
+                robot_base_logo_front:
+                  {}
+                robot_base_logo_left:
+                  {}
+                robot_base_logo_rear:
+                  {}
+                robot_base_logo_right:
+                  {}
+                robot_front_laser_base_link:
+                  robot_front_laser_link:
                     {}
-                rbkairos_front_left_wheel_link:
+                robot_front_left_wheel_link:
                   {}
-                rbkairos_front_rgbd_camera_rgb_base_link:
-                  rbkairos_front_rgbd_camera_depth_frame:
-                    rbkairos_front_rgbd_camera_depth_optical_frame:
+                robot_front_rgbd_camera_rgb_base_link:
+                  robot_front_rgbd_camera_depth_frame:
+                    robot_front_rgbd_camera_depth_optical_frame:
                       {}
-                  rbkairos_front_rgbd_camera_link:
+                  robot_front_rgbd_camera_link:
                     {}
-                  rbkairos_front_rgbd_camera_rgb_optical_frame:
+                  robot_front_rgbd_camera_rgb_optical_frame:
                     {}
-                rbkairos_front_right_wheel_link:
+                robot_front_right_wheel_link:
                   {}
-                rbkairos_imu_link:
+                robot_imu_link:
                   {}
-                rbkairos_rear_laser_base_link:
-                  rbkairos_rear_laser_link:
+                robot_rear_laser_base_link:
+                  robot_rear_laser_link:
                     {}
-                rbkairos_ur10_base_link:
-                  rbkairos_ur10_base:
+                robot_ur10_base_link:
+                  robot_ur10_base:
                     {}
-                  rbkairos_ur10_shoulder_link:
-                    rbkairos_ur10_upper_arm_link:
-                      rbkairos_ur10_forearm_link:
-                        rbkairos_ur10_wrist_1_link:
-                          rbkairos_ur10_wrist_2_link:
-                            rbkairos_ur10_wrist_3_link:
-                              rbkairos_ur10_ee_link:
+                  robot_ur10_shoulder_link:
+                    robot_ur10_upper_arm_link:
+                      robot_ur10_forearm_link:
+                        robot_ur10_wrist_1_link:
+                          robot_ur10_wrist_2_link:
+                            robot_ur10_wrist_3_link:
+                              robot_ur10_ee_link:
                                 {}
-                              rbkairos_ur10_tool0:
+                              robot_ur10_tool0:
                                 {}
       Update Interval: 0
       Value: true
@@ -437,7 +482,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: /rbkairos/map
+      Topic: /robot/map
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -454,7 +499,7 @@ Visualization Manager:
       Shaft Length: 0.230000004
       Shaft Radius: 0.00999999978
       Shape: Arrow (Flat)
-      Topic: /rbkairos/particlecloud
+      Topic: /robot/particlecloud
       Unreliable: false
       Value: true
     - Alpha: 0.699999988
@@ -463,7 +508,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: global_costmap
-      Topic: /rbkairos/move_base/global_costmap/costmap
+      Topic: /robot/move_base/global_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -473,7 +518,7 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: local_costmap
-      Topic: /rbkairos/move_base/local_costmap/costmap
+      Topic: /robot/move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
       Value: true
@@ -497,7 +542,7 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /rbkairos/move_base/TebLocalPlannerROS/global_plan
+      Topic: /robot/move_base/NavfnROS/plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -520,14 +565,14 @@ Visualization Manager:
       Radius: 0.0299999993
       Shaft Diameter: 0.100000001
       Shaft Length: 0.100000001
-      Topic: /rbkairos/move_base/TebLocalPlannerROS/local_plan
+      Topic: /robot/move_base/TebLocalPlannerROS/local_plan
       Unreliable: false
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: rbkairos_map
+    Fixed Frame: robot_map
     Frame Rate: 30
   Name: root
   Tools:
@@ -563,10 +608,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.690397859
+      Pitch: 0.470397919
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.54357624
+      Yaw: 4.75857735
     Saved: ~
 Window Geometry:
   A Front RGBD Camera:
