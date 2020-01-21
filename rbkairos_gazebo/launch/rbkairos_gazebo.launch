@@ -8,7 +8,8 @@
     <arg name="launch_robot_b" default="false"/>
     <arg name="launch_robot_c" default="false"/>
     <arg name="default_map" default="willow_garage/willow_garage.yaml"/>
-    <arg name="default_xacro" default="rbkairos.urdf.xacro"/>
+    <arg name="default_arm_model" default="ur10"/>
+    <arg name="default_xacro" default="rbkairos_$(arg default_arm_model).urdf.xacro"/>
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="debug" default="false"/>
     <arg name="ros_planar_move_plugin" default="true"/>
@@ -16,7 +17,7 @@
 
     <!--params of the different robots-->
     <!-- robot a -->
-    <arg name="id_robot_a" default="robot"/>
+    <arg name="id_robot_a" default="robot_a"/>
     <arg name="x_init_pose_robot_a" default="0" />
     <arg name="y_init_pose_robot_a" default="0" />
     <arg name="z_init_pose_robot_a" default="0" />
@@ -27,12 +28,14 @@
     <arg name="amcl_and_mapserver_a" default="false"/>
     <arg name="map_file_a" default="$(arg default_map)"/>
     <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
+    <arg name="launch_arm_a" default="true"/>
+    <arg name="arm_model_a" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_a" default="false"/>
     <arg name="launch_pad_a" default="false"/>
 
 
     <!-- robot b -->
-    <arg name="id_robot_b" default="robot"/>
+    <arg name="id_robot_b" default="robot_b"/>
     <arg name="x_init_pose_robot_b" default="0" />
     <arg name="y_init_pose_robot_b" default="0" />
     <arg name="z_init_pose_robot_b" default="0" />
@@ -43,11 +46,13 @@
     <arg name="amcl_and_mapserver_b" default="false"/>
     <arg name="map_file_b" default="$(arg default_map)"/>
     <arg name="xacro_robot_b" default="$(arg default_xacro)"/>
+    <arg name="launch_arm_b" default="true"/>
+    <arg name="arm_model_b" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_b" default="false"/>
     <arg name="launch_pad_b" default="false"/>
 
     <!-- robot c -->
-    <arg name="id_robot_c" default="robot"/>
+    <arg name="id_robot_c" default="robot_c"/>
     <arg name="x_init_pose_robot_c" default="0" />
     <arg name="y_init_pose_robot_c" default="0" />
     <arg name="z_init_pose_robot_c" default="0" />
@@ -57,6 +62,8 @@
     <arg name="move_base_robot_c" default="false"/>
     <arg name="amcl_and_mapserver_c" default="false"/>
     <arg name="map_file_c" default="$(arg default_map)"/>
+    <arg name="launch_arm_c" default="true"/>
+    <arg name="arm_model_c" default="$(arg default_arm_model)"/>
     <arg name="xacro_robot_c" default="$(arg default_xacro)"/>
     <arg name="moveit_movegroup_c" default="false"/>
     <arg name="launch_pad_c" default="false"/>
@@ -76,6 +83,8 @@
         <arg name="map_file" value="$(arg map_file_a)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_a)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+        <arg name="launch_arm" value="$(arg launch_arm_a)"/>
+        <arg name="arm_model" value="$(arg arm_model_a)"/>
         <arg name="launch_move_group" value="$(arg moveit_movegroup_a)"/>
         <arg name="launch_pad" value="$(arg launch_pad_a)"/>
     </include>
@@ -94,6 +103,9 @@
         <arg name="map_file" value="$(arg map_file_b)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_b)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+        <arg name="launch_arm" value="$(arg launch_arm_b)"/>
+        <arg name="arm_model" value="$(arg arm_model_b)"/>
+        <arg name="launch_move_group" value="$(arg moveit_movegroup_b)"/>
         <arg name="launch_pad" value="$(arg launch_pad_b)"/>
     </include>
 
@@ -111,6 +123,9 @@
         <arg name="map_file" value="$(arg map_file_c)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_c)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+        <arg name="launch_arm" value="$(arg launch_arm_c)"/>
+        <arg name="arm_model" value="$(arg arm_model_c)"/>
+        <arg name="launch_move_group" value="$(arg moveit_movegroup_c)"/>
         <arg name="launch_pad" value="$(arg launch_pad_c)"/>
     </include>
 

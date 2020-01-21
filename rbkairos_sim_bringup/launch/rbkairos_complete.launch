@@ -6,10 +6,12 @@
     <arg name="launch_rviz" default="true"/>
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="default_map" default="willow_garage/willow_garage.yaml"/>
-    <arg name="default_xacro" default="rbkairos.urdf.xacro"/>
+    <arg name="default_arm_model" default="ur10"/>
+    <arg name="default_xacro" default="rbkairos_$(arg default_arm_model).urdf.xacro"/>
     <arg name="omni_drive" value="true"/>
 
     <!-- arguments robot a -->
+    <arg name="id_robot_a" default="robot"/>
     <arg name="launch_robot_a" default="true"/>
     <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
     <arg name="map_file_a" default="$(arg default_map)"/>
@@ -24,9 +26,12 @@
     <arg name="z_init_pose_robot_a" default="0" />
     <arg name="yaw_init_pose_robot_a" default="0" />
     <!-- arm robot a -->
+    <arg name="launch_arm_a" default="true"/>
+    <arg name="arm_model_a" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_a" default="false"/>
 
     <!-- arguments robot b -->
+    <arg name="id_robot_b" default="robot_b"/>
     <arg name="launch_robot_b" default="false"/>
     <arg name="xacro_robot_b" default="$(arg default_xacro)"/>
     <arg name="map_file_b" default="$(arg default_map)"/>
@@ -41,9 +46,12 @@
     <arg name="z_init_pose_robot_b" default="0" />
     <arg name="yaw_init_pose_robot_b" default="0" />
     <!-- arm robot b -->
+    <arg name="launch_arm_b" default="true"/>
+    <arg name="arm_model_b" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_b" default="false"/>
 
     <!-- arguments robot c -->
+    <arg name="id_robot_c" default="robot_c"/>
     <arg name="launch_robot_c" default="false"/>
     <arg name="xacro_robot_c" default="$(arg default_xacro)"/>
     <arg name="map_file_c" default="$(arg default_map)"/>
@@ -58,6 +66,8 @@
     <arg name="z_init_pose_robot_c" default="0" />
     <arg name="yaw_init_pose_robot_c" default="0" />
     <!-- arm robot c -->
+    <arg name="launch_arm_c" default="true"/>
+    <arg name="arm_model_c" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_c" default="false"/>
 
 
@@ -70,6 +80,7 @@
         <arg name="ros_planar_move_plugin" value="$(arg omni_drive)"/>
 
         <!-- robot_a args -->
+        <arg name="id_robot_a" default="$(arg id_robot_a)"/>
         <arg name="launch_robot_a" value="$(arg launch_robot_a)"/>
         <arg name="xacro_robot_a" value="$(arg xacro_robot_a)"/>
         <arg name="map_file_a" value="$(arg map_file_a)"/>
@@ -84,9 +95,12 @@
         <arg name="z_init_pose_robot_a" value="$(arg z_init_pose_robot_a)"/>
         <arg name="yaw_init_pose_robot_a" value="$(arg yaw_init_pose_robot_a)"/>
         <!-- robot_a arm args -->
+        <arg name="launch_arm_a" value="$(arg launch_arm_a)"/>
+        <arg name="arm_model_a" value="$(arg arm_model_a)"/>
         <arg name="moveit_movegroup_a" value="$(arg moveit_movegroup_a)"/>
 
         <!-- robot_b args -->
+        <arg name="id_robot_b" default="$(arg id_robot_b)"/>
         <arg name="launch_robot_b" value="$(arg launch_robot_b)"/>
         <arg name="xacro_robot_b" value="$(arg xacro_robot_b)"/>
         <arg name="map_file_b" value="$(arg map_file_b)"/>
@@ -101,9 +115,12 @@
         <arg name="z_init_pose_robot_b" value="$(arg z_init_pose_robot_b)"/>
         <arg name="yaw_init_pose_robot_b" value="$(arg yaw_init_pose_robot_b)"/>
         <!-- robot_b arm args -->
+        <arg name="launch_arm_b" value="$(arg launch_arm_b)"/>
+        <arg name="arm_model_b" value="$(arg arm_model_b)"/>
         <arg name="moveit_movegroup_b" value="$(arg moveit_movegroup_b)"/>
 
         <!-- robot_c args -->
+        <arg name="id_robot_c" default="$(arg id_robot_c)"/>
         <arg name="launch_robot_c" value="$(arg launch_robot_c)"/>
         <arg name="xacro_robot_c" value="$(arg xacro_robot_c)"/>
         <arg name="map_file_c" value="$(arg map_file_c)"/>
@@ -118,6 +135,8 @@
         <arg name="z_init_pose_robot_c" value="$(arg z_init_pose_robot_c)"/>
         <arg name="yaw_init_pose_robot_c" value="$(arg yaw_init_pose_robot_c)"/>
         <!-- robot_c arm args -->
+        <arg name="launch_arm_c" value="$(arg launch_arm_c)"/>
+        <arg name="arm_model_c" value="$(arg arm_model_c)"/>
         <arg name="moveit_movegroup_c" value="$(arg moveit_movegroup_c)"/>
 
 

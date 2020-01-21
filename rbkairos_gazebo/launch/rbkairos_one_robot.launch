@@ -8,7 +8,8 @@
     <arg name="z_init_pose" default="0"/>
     <arg name="yaw_init_pose" default="0"/>
 
-    <arg name="xacro_robot" default="rbkairos.urdf.xacro"/>
+    <arg name="arm_model" default="ur10"/>
+    <arg name="xacro_robot" default="rbkairos_$(arg arm_model).urdf.xacro"/>
     <arg name="launch_robot_localization" default="false"/>
     <arg name="launch_amcl_and_mapserver" default="true"/>
     <arg name="launch_gmapping" default="false"/>
@@ -43,9 +44,9 @@
                 -y $(arg y_init_pose)
                 -z $(arg z_init_pose)
                 -Y $(arg yaw_init_pose)
-                -J rbkairos_a_ur10_elbow_joint -2
-                -J rbkairos_a_ur10_shoulder_lift_joint -0.785
-                -J rbkairos_a_ur10_shoulder_pan_joint -0.785
+                -J $(arg id_robot)_arm_elbow_joint -2
+                -J $(arg id_robot)_arm_shoulder_lift_joint -0.785
+                -J $(arg id_robot)_arm_shoulder_pan_joint -0.785
                 -urdf
                 -param robot_description
                  -model $(arg id_robot)

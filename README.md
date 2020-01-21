@@ -27,3 +27,9 @@ If you want to launch Moveit you have to run:
 ```
 roslaunch rbkairos_sim_bringup rbkairos_complete.launch move_group_robot_a:=true
 ```
+
+
+If you want to change the robot arm and his gripper:
+
+```
+roslaunch rbkairos_sim_bringup rbkairos_complete.launch default_xacro:=<xacro_file> default_arm_model:=<urX>
