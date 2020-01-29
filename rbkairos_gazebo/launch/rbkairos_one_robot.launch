@@ -25,7 +25,7 @@
     <arg name="movebase_local_planner" default="teb"/>
     <arg name="launch_pad" default="false"/>
 
-    <arg name="load_arm_kinematics_file" default="true"/>
+    <arg name="load_arm_kinematics_file" default="false"/>
 
     <!-- BEGIN ROBOT -->
     <group ns="$(arg id_robot)">
