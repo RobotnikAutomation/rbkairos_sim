@@ -25,6 +25,8 @@
     <arg name="movebase_local_planner" default="teb"/>
     <arg name="launch_pad" default="false"/>
 
+    <arg name="load_arm_kinematics_file" default="true"/>
+
     <!-- BEGIN ROBOT -->
     <group ns="$(arg id_robot)">
 
@@ -32,7 +34,7 @@
 
         <!-- Load the URDF into the ROS Parameter Server -->
         <param name="robot_description"
-        command="$(find xacro)/xacro '$(find rbkairos_description)/robots/$(arg xacro_robot)' prefix:=$(arg prefix) ros_planar_move_plugin:=$(arg ros_planar_move_plugin) --inorder"/>
+        command="$(find xacro)/xacro '$(find rbkairos_description)/robots/$(arg xacro_robot)' prefix:=$(arg prefix) ros_planar_move_plugin:=$(arg ros_planar_move_plugin) load_kinematics_file:=$(arg load_arm_kinematics_file) --inorder"/>
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
             <remap from="/joint_states" to="joint_states" />
@@ -116,7 +118,7 @@
         </include>
 
         <!-- MoveGroup Moveit! -->
-        <include if="$(arg launch_move_group)" file="$(find rbkairos_10_moveit_config)/launch/rbkairos_10_moveit_config.launch">
+        <include if="$(arg launch_move_group)" file="$(find rbkairos_10_moveit_config)/launch/rbkairos_moveit_config.launch">
                 <arg name="sim" value="true"/>
         </include>
 

@@ -2,7 +2,7 @@
 <launch>
 
     <!-- arg to config the launch file-->
-    
+
     <arg name="launch_rviz" default="true"/>
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="default_map" default="willow_garage/willow_garage.yaml"/>

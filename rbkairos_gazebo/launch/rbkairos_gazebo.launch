@@ -13,7 +13,7 @@
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="debug" default="false"/>
     <arg name="ros_planar_move_plugin" default="true"/>
-    
+
 
     <!--params of the different robots-->
     <!-- robot a -->
