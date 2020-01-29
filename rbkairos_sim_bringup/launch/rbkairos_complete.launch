@@ -80,7 +80,7 @@
         <arg name="ros_planar_move_plugin" value="$(arg omni_drive)"/>
 
         <!-- robot_a args -->
-        <arg name="id_robot_a" default="$(arg id_robot_a)"/>
+        <arg name="id_robot_a" value="$(arg id_robot_a)"/>
         <arg name="launch_robot_a" value="$(arg launch_robot_a)"/>
         <arg name="xacro_robot_a" value="$(arg xacro_robot_a)"/>
         <arg name="map_file_a" value="$(arg map_file_a)"/>
@@ -100,7 +100,7 @@
         <arg name="moveit_movegroup_a" value="$(arg moveit_movegroup_a)"/>
 
         <!-- robot_b args -->
-        <arg name="id_robot_b" default="$(arg id_robot_b)"/>
+        <arg name="id_robot_b" value="$(arg id_robot_b)"/>
         <arg name="launch_robot_b" value="$(arg launch_robot_b)"/>
         <arg name="xacro_robot_b" value="$(arg xacro_robot_b)"/>
         <arg name="map_file_b" value="$(arg map_file_b)"/>
@@ -120,7 +120,7 @@
         <arg name="moveit_movegroup_b" value="$(arg moveit_movegroup_b)"/>
 
         <!-- robot_c args -->
-        <arg name="id_robot_c" default="$(arg id_robot_c)"/>
+        <arg name="id_robot_c" value="$(arg id_robot_c)"/>
         <arg name="launch_robot_c" value="$(arg launch_robot_c)"/>
         <arg name="xacro_robot_c" value="$(arg xacro_robot_c)"/>
         <arg name="map_file_c" value="$(arg map_file_c)"/>
