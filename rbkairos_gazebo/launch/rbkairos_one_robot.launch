@@ -59,11 +59,9 @@
 
 
 
-        <!-- Load joint controller configurations from YAML file to parameter server -->
-        <rosparam file="$(find rbkairos_gazebo)/config/$(arg prefix)control.yaml" command="load"/>
         <param if="$(arg launch_robot_localization)" name="summit_xl_control/enable_odom_tf" value="false"/>
 
-        <!-- load the controllers -->
+        <!-- load the controllers and its configuration -->
         <node unless="$(arg ros_planar_move_plugin)" name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
            output="screen" args="
                       joint_read_state_controller"/> <!-- This mode is not available for now -->
@@ -71,13 +69,21 @@
            output="screen" args="
                       joint_read_state_controller"/>
 
-        <node if="$(arg launch_arm)" name="controller_spawner_arm" pkg="controller_manager" type="spawner" respawn="false"
-           output="screen" args="
-                      arm_controller"/>
+        
+        <group if="$(arg launch_arm)">
+            <rosparam file="$(find rbkairos_gazebo)/config/arm_control.yaml" command="load"/>
+            <arg name="joint_names" default="[$(arg id_robot)_arm_shoulder_pan_joint, $(arg id_robot)_arm_shoulder_lift_joint, $(arg id_robot)_arm_elbow_joint, $(arg id_robot)_arm_wrist_1_joint, $(arg id_robot)_arm_wrist_2_joint, $(arg id_robot)_arm_wrist_3_joint] "/>
+            <rosparam param="arm_controller/joints" subst_value="True"> $(arg joint_names)</rosparam>
+            
+            <node if="$(arg launch_arm)" name="controller_spawner_arm" pkg="controller_manager" type="spawner" respawn="false"
+            output="screen" args="
+                        arm_controller"/>
+        </group>
 
         <group if="$(arg launch_gripper)">
             <rosparam file="$(find rbkairos_gazebo)/config/gripper_control.yaml" command="load"/>
             <param name="gripper_controller/joint" value="$(arg id_robot)_$(arg gripper_model)_gripper_finger_left_joint"/>
+            
             <node name="controller_spawner_gripper" pkg="controller_manager" type="spawner" respawn="false"
             output="screen" args="
                         gripper_controller"/>
