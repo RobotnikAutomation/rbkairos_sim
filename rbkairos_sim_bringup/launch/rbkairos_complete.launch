@@ -7,6 +7,7 @@
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="default_map" default="willow_garage/willow_garage.yaml"/>
     <arg name="default_arm_model" default="ur10"/>
+    <arg name="default_gripper_model" default="egh"/>
     <arg name="default_xacro" default="rbkairos_$(arg default_arm_model).urdf.xacro"/>
     <arg name="omni_drive" value="true"/>
 
@@ -29,7 +30,10 @@
     <arg name="launch_arm_a" default="true"/>
     <arg name="arm_model_a" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_a" default="false"/>
-
+    <!-- gripper robot a -->
+    <arg name="launch_gripper_a" default="true"/>
+    <arg name="gripper_model_a" default="$(arg default_gripper_model)"/>
+   
     <!-- arguments robot b -->
     <arg name="id_robot_b" default="robot_b"/>
     <arg name="launch_robot_b" default="false"/>
@@ -49,7 +53,10 @@
     <arg name="launch_arm_b" default="true"/>
     <arg name="arm_model_b" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_b" default="false"/>
-
+    <!-- gripper robot b -->
+    <arg name="launch_gripper_b" default="true"/>
+    <arg name="gripper_model_b" default="$(arg default_gripper_model)"/>
+    
     <!-- arguments robot c -->
     <arg name="id_robot_c" default="robot_c"/>
     <arg name="launch_robot_c" default="false"/>
@@ -69,7 +76,9 @@
     <arg name="launch_arm_c" default="true"/>
     <arg name="arm_model_c" default="$(arg default_arm_model)"/>
     <arg name="moveit_movegroup_c" default="false"/>
-
+    <!-- gripper robot c -->
+    <arg name="launch_gripper_c" default="true"/>
+    <arg name="gripper_model_c" default="$(arg default_gripper_model)"/>
 
     <!-- RBKAIROS GAZEBO -->
     <include file="$(find rbkairos_gazebo)/launch/rbkairos_gazebo.launch">
@@ -98,6 +107,9 @@
         <arg name="launch_arm_a" value="$(arg launch_arm_a)"/>
         <arg name="arm_model_a" value="$(arg arm_model_a)"/>
         <arg name="moveit_movegroup_a" value="$(arg moveit_movegroup_a)"/>
+        <!-- robot_a gripper args -->
+        <arg name="launch_gripper_a" value="$(arg launch_gripper_a)"/>
+        <arg name="gripper_model_a" value="$(arg gripper_model_a)"/>
 
         <!-- robot_b args -->
         <arg name="id_robot_b" value="$(arg id_robot_b)"/>
@@ -118,6 +130,9 @@
         <arg name="launch_arm_b" value="$(arg launch_arm_b)"/>
         <arg name="arm_model_b" value="$(arg arm_model_b)"/>
         <arg name="moveit_movegroup_b" value="$(arg moveit_movegroup_b)"/>
+        <!-- robot_b gripper args -->
+        <arg name="launch_gripper_b" value="$(arg launch_gripper_b)"/>
+        <arg name="gripper_model_b" value="$(arg gripper_model_b)"/>
 
         <!-- robot_c args -->
         <arg name="id_robot_c" value="$(arg id_robot_c)"/>
@@ -138,6 +153,9 @@
         <arg name="launch_arm_c" value="$(arg launch_arm_c)"/>
         <arg name="arm_model_c" value="$(arg arm_model_c)"/>
         <arg name="moveit_movegroup_c" value="$(arg moveit_movegroup_c)"/>
+        <!-- robot_c gripper args -->
+        <arg name="launch_gripper_c" value="$(arg launch_gripper_c)"/>
+        <arg name="gripper_model_c" value="$(arg gripper_model_c)"/>
 
 
     </include>

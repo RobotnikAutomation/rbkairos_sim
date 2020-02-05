@@ -24,8 +24,10 @@
     <arg name="odom_model_type" default="omni"/>
     <arg name="movebase_local_planner" default="teb"/>
     <arg name="launch_pad" default="false"/>
+    <arg name="launch_gripper" default="false"/>
+    <arg name="gripper_model" default="egh"/>
 
-    <arg name="load_arm_kinematics_file" default="false"/>
+    <arg name="load_arm_kinematics_file" default="true"/>
 
     <!-- BEGIN ROBOT -->
     <group ns="$(arg id_robot)">
@@ -57,7 +59,7 @@
 
 
 
-        <!-- Load joint controller configurations from YAcd .ML file to parameter server -->
+        <!-- Load joint controller configurations from YAML file to parameter server -->
         <rosparam file="$(find rbkairos_gazebo)/config/$(arg prefix)control.yaml" command="load"/>
         <param if="$(arg launch_robot_localization)" name="summit_xl_control/enable_odom_tf" value="false"/>
 
@@ -69,9 +71,18 @@
            output="screen" args="
                       joint_read_state_controller"/>
 
-        <node if="$(arg launch_arm)" name="controller_spawner_" pkg="controller_manager" type="spawner" respawn="false"
+        <node if="$(arg launch_arm)" name="controller_spawner_arm" pkg="controller_manager" type="spawner" respawn="false"
            output="screen" args="
                       arm_controller"/>
+
+        <group if="$(arg launch_gripper)">
+            <rosparam file="$(find rbkairos_gazebo)/config/gripper_control.yaml" command="load"/>
+            <param name="gripper_controller/joint" value="$(arg id_robot)_$(arg gripper_model)_gripper_finger_left_joint"/>
+            <node name="controller_spawner_gripper" pkg="controller_manager" type="spawner" respawn="false"
+            output="screen" args="
+                        gripper_controller"/>
+        </group>
+        
 
         <node pkg="twist_mux" type="twist_mux" name="twist_mux">
             <rosparam command="load" file="$(find summit_xl_control)/config/twist_mux.yaml" />

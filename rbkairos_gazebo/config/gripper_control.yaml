@@ -1,0 +1,5 @@
+# This is intended to be used in case the gripper is mimetic.
+# The controller joint must be the master joint. 
+gripper_controller:
+  type: position_controllers/GripperActionController
+  joint: robot_egh_gripper_finger_left_joint  
