@@ -4,7 +4,11 @@ This package contains launch files to start the robot(s) in simulation.
 
 ## Dependencies
 
-Install the dependencies from the workspace root:
+This simulation depends on some Robotnik Automation packages:
+
+- [rbkairos_common](https://github.com/RobotnikAutomation/rbkairos_common)
+
+Other dependencies can be installed running the following command from the workspace root:
 
 ```
 rosdep install --from-paths src --ignore-src -r -y
