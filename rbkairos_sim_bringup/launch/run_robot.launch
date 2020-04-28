@@ -19,6 +19,13 @@
   <arg name="ros_planar_move_plugin" default="true"/>
   <arg name="launch_base_hw_sim" default="false"/>
   <arg name="launch_battery_estimator" default="false"/>
+
+  <!-- If Rviz should be spawned here -->
+  <arg name="run_rviz" default="false"/>
+  
+  <!-- RViz configuration -->
+  <arg name="rviz_config" default="rviz/rviz.rviz"/>
+  <arg name="rviz_config_file" default="$(eval find(config_package) + '/' + rviz_config)"/>
   
   <!-- Launch robot (simulation specific software) -->
   <group ns="$(arg robot_id)">
@@ -75,6 +82,10 @@
     </group>
   </group>
 
+  <!-- launch rviz -->
+  <include if="$(arg run_rviz)" ns="$(arg robot_id)" file="$(find rbkairos_sim_bringup)/launch/run_rviz.launch">
+    <arg name="rviz_config_file" value="$(arg rviz_config_file)" />
+  </include>
   
 </launch>
 
