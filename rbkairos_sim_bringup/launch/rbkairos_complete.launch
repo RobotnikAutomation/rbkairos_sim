@@ -30,6 +30,7 @@
   <arg name="launch_base_hw_sim" default="false"/>
   <arg name="launch_battery_estimator" default="false"/>
   <arg name="launch_arm_control" default="true"/>
+  <arg name="arm_controllers" default="pos_traj_controller"/> <!-- controllers can be listed seprated by a blank space -->
   <arg name="load_kinematics_file" default="$(arg launch_arm_control)"/> <!-- Necesarry for ur_description compatible with official ur drivers--> 
 
   <arg name="launch_gripper_control" default="false"/>
@@ -66,6 +67,7 @@
     <arg name="use_gpu_for_simulation" value="$(arg use_gpu_for_simulation)" />
     <arg name="launch_arm_control" value="$(arg launch_arm_control)"/>
     <arg name="load_kinematics_file" value="$(arg load_kinematics_file)"/>
+    <arg name="arm_controllers" value="$(arg arm_controllers)"/>
     <arg name="launch_gripper_control" value="$(arg launch_gripper_control)"/>
 
   </include>
