@@ -8,7 +8,7 @@
 
   <!-- What to execute -->
   <arg name="run_simulation" default="true"/>
-  <arg name="run_robot" default="true"/>  
+  <arg name="run_robot" default="true"/>
   <arg name="run_rviz" default="true"/>
 
   <!-- Simulation configuration -->
@@ -40,7 +40,7 @@
   <include if="$(arg run_simulation)" file="$(find rbkairos_sim_bringup)/launch/run_simulation.launch">
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
-    
+
     <arg name="world_file" value="$(arg world_file)"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="paused" value="$(arg paused)" />
@@ -52,9 +52,10 @@
   <include if="$(arg run_robot)" file="$(find rbkairos_sim_bringup)/launch/run_robot.launch">
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
-    
+
     <arg name="robot_id" value="$(arg robot_id)"/>
     <arg name="prefix" value="$(arg prefix)" />
+    <arg name="robot_xacro" value="$(arg robot_xacro)"/>
     <arg name="x_init_pose" value="$(arg x_init_pose)"/>
     <arg name="y_init_pose" value="$(arg y_init_pose)"/>
     <arg name="z_init_pose" value="$(arg z_init_pose)"/>
@@ -70,7 +71,7 @@
   <include if="$(arg run_rviz)" file="$(find rbkairos_sim_bringup)/launch/run_rviz.launch">
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
-    
+
     <arg name="rviz_config_file" value="$(arg rviz_config_file)" />
   </include>
 
