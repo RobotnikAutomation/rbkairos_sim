@@ -29,7 +29,9 @@
   <arg name="z_init_pose" default="0"/>
   <arg name="launch_base_hw_sim" default="false"/>
   <arg name="launch_battery_estimator" default="false"/>
-  
+  <arg name="launch_arm_control" default="true"/>
+  <arg name="launch_gripper_control" default="false"/>
+
   <!-- RViz configuration -->
   <arg name="rviz_config" default="rviz/rviz.rviz"/>
   <arg name="rviz_config_file" default="$(eval find(config_package) + '/' + rviz_config)"/>
@@ -59,6 +61,9 @@
     <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
     <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
     <arg name="use_gpu_for_simulation" default="$(arg use_gpu_for_simulation)" />
+    <arg name="launch_arm_control" default="$(arg launch_arm_control)"/>
+    <arg name="launch_gripper_control" default="$(arg launch_gripper_control)"/>
+
   </include>
 
   <!-- launch rviz -->
