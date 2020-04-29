@@ -1,3 +1,0 @@
-odom_frame: rb1_base_a_odom
-base_frame: rb1_base_a_footprint
-global_frame: rb1_base_a_map
