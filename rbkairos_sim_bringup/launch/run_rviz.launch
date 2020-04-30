@@ -6,10 +6,10 @@
   <arg name="config_package" default="$(optenv SIMULATION_CONFIG_PACKAGE rbkairos_gazebo)"/>
   
   <!-- Rviz arguments -->
-  <arg name="rviz_config" default="rviz/rviz.rviz"/>
-  <arg name="rviz_config_file" default="$(eval find(config_package) + '/' + rviz_config)"/>
+  <arg name="config_file" default="rviz/rviz.rviz"/>
+  <arg name="config_path" default="$(eval find(config_package) + '/' + config_file)"/>
 
   <!-- Run rviz -->
-  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(arg rviz_config_file)"/>
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(arg config_path)"/>
 
 </launch>

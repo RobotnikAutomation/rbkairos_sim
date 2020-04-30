@@ -38,8 +38,8 @@
   <arg name="gripper_controllers" default="gripper/gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
 
   <!-- RViz configuration -->
-  <arg name="rviz_config" default="rviz/rviz.rviz"/>
-  <arg name="rviz_config_file" default="$(eval find(config_package) + '/' + rviz_config)"/>
+  <arg name="rviz_config_file" default="rviz/rviz.rviz"/>
+  <arg name="rviz_config_path" default="$(eval find(config_package) + '/' + rviz_config_file)"/>
 
   <!-- launch simulation -->
   <include if="$(arg run_simulation)" file="$(find rbkairos_sim_bringup)/launch/run_simulation.launch">
@@ -80,7 +80,7 @@
     <arg name="simulation_package" value="$(arg simulation_package)"/>
     <arg name="config_package" value="$(arg config_package)"/>
 
-    <arg name="rviz_config_file" value="$(arg rviz_config_file)" />
+    <arg name="config_path" value="$(arg rviz_config_path)" />
   </include>
 
 </launch>

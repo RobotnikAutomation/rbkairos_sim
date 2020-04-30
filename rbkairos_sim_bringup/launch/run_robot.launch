@@ -31,8 +31,8 @@
   <arg name="run_rviz" default="false"/>
   
   <!-- RViz configuration -->
-  <arg name="rviz_config" default="rviz/rviz.rviz"/>
-  <arg name="rviz_config_file" default="$(eval find(config_package) + '/' + rviz_config)"/>
+  <arg name="rviz_config_file" default="rviz/rviz.rviz"/>
+  <arg name="rviz_config_path" default="$(eval find(config_package) + '/' + rviz_config_file)"/>
   
   <!-- Launch robot (simulation specific software) -->
   <group ns="$(arg robot_id)">
@@ -96,7 +96,7 @@
 
   <!-- launch rviz -->
   <include if="$(arg run_rviz)" ns="$(arg robot_id)" file="$(find rbkairos_sim_bringup)/launch/run_rviz.launch">
-    <arg name="rviz_config_file" value="$(arg rviz_config_file)" />
+    <arg name="config_path" value="$(arg rviz_config_path)" />
   </include>
   
 </launch>
