@@ -4,7 +4,6 @@
     <!-- What simulator to use -->
     <arg name="simulation_package" default="$(optenv SIMULATION_PACKAGE rbkairos_gazebo)"/>
     <arg name="config_package" default="$(optenv SIMULATION_CONFIG_PACKAGE rbkairos_gazebo)"/>
-    <arg name="use_gpu_for_simulation" default="$(optenv SIMULATION_USE_GPU true)"/>
 
     <!-- Simulation arguments -->
     <arg name="world" default="worlds/office.world" /> <!-- relative path to config_package -->
