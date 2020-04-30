@@ -35,7 +35,7 @@
   <arg name="load_kinematics_file" default="$(arg launch_arm_control)"/> <!-- Necesarry for ur_description compatible with official ur drivers--> 
   <!-- Gripper configuration-->
   <arg name="launch_gripper_control" default="false"/>
-  <arg name="gripper_controllers" default="gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
+  <arg name="gripper_controllers" default="gripper/gripper_controller"/> <!-- controllers can be listed seprated by a blank space -->
 
   <!-- RViz configuration -->
   <arg name="rviz_config" default="rviz/rviz.rviz"/>
