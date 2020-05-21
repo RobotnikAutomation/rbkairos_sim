@@ -27,11 +27,12 @@
 
   <run_depend>gazebo_ros</run_depend>
   <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>rbkairos_description</run_depend> 
-  <run_depend>xacro</run_depend> 
-  <run_depend>hector_gazebo_plugins</run_depend> 
-  <run_depend>gazebo_plugins</run_depend> 
+  <run_depend>rbkairos_description</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>hector_gazebo_plugins</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
   <run_depend>position_controllers</run_depend>
   <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>roboticsgroup_gazebo_plugins</run_depend>
 
 </package>

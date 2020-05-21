@@ -6,11 +6,15 @@
     <arg name="launch_rviz" default="true"/>
     <arg name="gazebo_world" default="$(find rbkairos_gazebo)/worlds/office.world"/>
     <arg name="default_map" default="willow_garage/willow_garage.yaml"/>
-    <arg name="default_arm_model" default="ur10"/>
+    <arg name="default_arm_model" default="ur5"/>
     <arg name="default_gripper_model" default="egh"/>
-    <arg name="default_xacro" default="rbkairos_$(arg default_arm_model).urdf.xacro"/>
-    <arg name="omni_drive" value="true"/>
+    <arg name="default_xacro" default="versions/rbkairos_$(arg default_arm_model)_$(arg default_gripper_model).urdf.xacro"/>
+    <arg name="omni_drive" default="true"/>
+    <!-- Needed if using ur_description from fmauch_universal_robot -->
     <arg name="load_arm_kinematics_file" default="false"/>
+    <!-- simulation of motor controllers topics and battery estimation -->
+    <arg name="launch_base_hw_sim" default="false"/>
+    <arg name="launch_battery_estimator" default="false"/>
 
     <!-- arguments robot a -->
     <arg name="id_robot_a" default="robot"/>
@@ -90,7 +94,8 @@
         <arg name="gazebo_world" value="$(arg gazebo_world)"/>
         <arg name="ros_planar_move_plugin" value="$(arg omni_drive)"/>
         <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
-
+        <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
+        <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
 
         <!-- robot_a args -->
         <arg name="id_robot_a" value="$(arg id_robot_a)"/>
