@@ -25,6 +25,8 @@
     <arg name="movebase_local_planner" default="teb"/>
     <arg name="launch_pad" default="false"/>
     <arg name="launch_gripper" default="false"/>
+    <arg name="launch_base_hw_sim" default="false"/>
+    <arg name="launch_battery_estimator" default="false"/>
     <arg name="gripper_model" default="egh"/>
 
     <arg name="load_arm_kinematics_file" default="true"/>
