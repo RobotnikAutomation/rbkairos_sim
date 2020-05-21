@@ -126,7 +126,7 @@
         </include>
 
         <!-- MoveGroup Moveit! -->
-        <include if="$(arg launch_move_group)" file="$(find rbkairos_10_moveit_config)/launch/rbkairos_moveit_config.launch">
+        <include if="$(arg launch_move_group)" file="$(find rbkairos_ur5_egh_moveit_config)/launch/rbkairos_moveit_config.launch">
                 <arg name="sim" value="true"/>
         </include>
 
