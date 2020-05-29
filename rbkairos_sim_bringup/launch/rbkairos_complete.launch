@@ -11,7 +11,7 @@
     <arg name="default_xacro" default="versions/rbkairos_$(arg default_arm_model)_$(arg default_gripper_model).urdf.xacro"/>
     <arg name="omni_drive" default="true"/>
     <!-- Needed if using ur_description from fmauch_universal_robot -->
-    <arg name="load_arm_kinematics_file" default="false"/>
+    <arg name="load_arm_kinematics_file" default="true"/>
     <!-- simulation of motor controllers topics and battery estimation -->
     <arg name="launch_base_hw_sim" default="false"/>
     <arg name="launch_battery_estimator" default="false"/>
