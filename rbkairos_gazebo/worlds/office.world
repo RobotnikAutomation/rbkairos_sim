@@ -1,19 +1,18 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
   <world name="default">
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>8.18313 -3.28715 9.77259 0 0.855643 2.7162</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
     <physics type="ode">
       <!--gravity>0 0 -1</gravity-->
       <gravity>0 0 -9.8</gravity>
       <ode>
         <solver>
-          <!--type>quick</type>
-          <dt>0.001</dt>
-          <iters>40</iters>
-          <sor>1.0</sor -->
-          <!-- type>quick</type>
-          <dt>0.01</dt>
-          <iters>20</iters>
-          <sor>1.0</sor -->
           <type>quick</type>
           <iters>20</iters>
           <sor>1.0</sor>
