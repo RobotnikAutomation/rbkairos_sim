@@ -33,7 +33,7 @@ If you want to launch Moveit you have to run:
 
 
 ```
-roslaunch rbkairos_sim_bringup rbkairos_complete.launch move_group_robot_a:=true
+roslaunch rbkairos_sim_bringup rbkairos_complete.launch moveit_movegroup_a:=true
 ```
 
 
