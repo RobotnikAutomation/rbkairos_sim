@@ -1,0 +1,29 @@
+repositories:
+  src/rbkairos_sim:
+    type: git
+    url: https://github.com/RobotnikAutomation/rbkairos_sim
+    version: melodic-devel
+  src/egh_gripper_common:
+    type: git
+    url: https://github.com/RobotnikAutomation/egh_gripper_common
+    version: 374cc5dec5c9c9fca8bca4a37dadd377b8224af1
+  src/rbkairos_common:
+    type: git
+    url: https://github.com/RobotnikAutomation/rbkairos_common
+    version: 3f88891c8130ee514275ed683c44153bac816b10
+  src/roboticsgroup_gazebo_plugins:
+    type: git
+    url: https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins
+    version: 509a32ea6accc58d03cebd9d670ae44635adc924
+  src/robotnik_sensors:
+    type: git
+    url: https://github.com/RobotnikAutomation/robotnik_sensors
+    version: 03c2918d09f579b35a5aa654207e7dec0d0996d2
+  src/summit_xl_common:
+    type: git
+    url: https://github.com/RobotnikAutomation/summit_xl_common
+    version: 20ce43ee92076a7f23cfb2503624f440d2f45560
+  src/universal_robot:
+    type: git
+    url: https://github.com/fmauch/universal_robot
+    version: 1ffdd69181389b14b7d6342f0c5bad3b45c5e32f

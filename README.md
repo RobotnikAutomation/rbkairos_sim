@@ -1,21 +1,51 @@
 # rbkairos_sim
 
-This package contains launch files to start the robot(s) in simulation.
+Packages for the simulation of the RB-Kairos.
 
-## Dependencies
+<p align="center">
+  <img src="doc/rbkairos.png" height="275" />
+</p>
 
-This simulation depends on some Robotnik Automation packages:
+## Packages
 
-- [rbkairos_common](https://github.com/RobotnikAutomation/rbkairos_common)
+### rbkairos_gazebo
 
-- [roboticsgroup_gazebo_plugins](https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins)
+This package contains the configuration files and worlds to launch the Gazebo environment along with the simulated robot.
 
-Other dependencies can be installed running the following command from the workspace root:
+### rbkairos_sim_bringup
 
+Launch files that launch the complete simulation of the robot/s.
+
+
+## Installation
+
+### 1) Install the following dependencies:
+
+This simulation has been tested using Gazebo 9.19 version. To facilitate the installation you can use the vcstool:
+
+```bash
+sudo apt-get install -y python3-vcstool
 ```
-rosdep install --from-paths src --ignore-src -r -y
+
+### 2) Create a workspace and clone the repository:
+
+```bash
+mkdir catkin_ws
+
+cd catkin_ws
+
+vcs import --input \
+ https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/melodic-devel/repos/rbkairos_sim.repos
+
+rosdep install --from-paths src --ignore-src -y
 ```
 
+### 3) Compile:
+
+```bash
+catkin build
+source devel/setup.bash
+```
 
 ## Bringup
 
