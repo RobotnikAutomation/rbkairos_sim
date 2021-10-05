@@ -10,7 +10,7 @@ repositories:
   src/rbkairos_common:
     type: git
     url: https://github.com/RobotnikAutomation/rbkairos_common
-    version: 3f88891c8130ee514275ed683c44153bac816b10
+    version: 2768cd7d8013e79693d148b9da5c6f32614349de
   src/roboticsgroup_gazebo_plugins:
     type: git
     url: https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins
@@ -26,4 +26,8 @@ repositories:
   src/universal_robot:
     type: git
     url: https://github.com/fmauch/universal_robot
-    version: 1ffdd69181389b14b7d6342f0c5bad3b45c5e32f
+    version: 1ffdd69181389b14b7d6342f0c5bad3b45c5e32f  
+  src/wsg50-ros-pkg:
+    type: git
+    url: https://github.com/RobotnikAutomation/wsg50-ros-pkg
+    version: a1380d109bcb8676822f59deeeea1f758220f436
