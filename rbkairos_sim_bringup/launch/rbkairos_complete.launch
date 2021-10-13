@@ -15,6 +15,7 @@
     <!-- simulation of motor controllers topics and battery estimation -->
     <arg name="launch_base_hw_sim" default="false"/>
     <arg name="launch_battery_estimator" default="false"/>
+    <arg name="use_gpu" default="false"/>
 
     <!-- arguments robot a -->
     <arg name="id_robot_a" default="robot"/>
@@ -96,6 +97,7 @@
         <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
         <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
         <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
+        <arg name="use_gpu" value="$(arg use_gpu)"/>
 
         <!-- robot_a args -->
         <arg name="id_robot_a" value="$(arg id_robot_a)"/>

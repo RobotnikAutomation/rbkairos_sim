@@ -17,6 +17,7 @@
     <arg name="load_arm_kinematics_file" default="true"/>
     <arg name="launch_base_hw_sim" default="false"/>
     <arg name="launch_battery_estimator" default="false"/>
+    <arg name="use_gpu" default="false"/>
 
 
     <!--params of the different robots-->
@@ -101,6 +102,7 @@
         <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
         <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
         <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
+        <arg name="use_gpu" value="$(arg use_gpu)"/>
     </include>
 
     <!--BEGIN ROBOT 2-->
@@ -126,6 +128,7 @@
         <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
         <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
         <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
+        <arg name="use_gpu" value="$(arg use_gpu)"/>
     </include>
 
     <!--BEGIN ROBOT 3-->
@@ -151,6 +154,7 @@
         <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
         <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
         <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
+        <arg name="use_gpu" value="$(arg use_gpu)"/>
     </include>
 
 

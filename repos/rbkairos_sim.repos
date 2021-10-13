@@ -10,7 +10,7 @@ repositories:
   src/rbkairos_common:
     type: git
     url: https://github.com/RobotnikAutomation/rbkairos_common
-    version: 2768cd7d8013e79693d148b9da5c6f32614349de
+    version: 64a1e945baa72a7a11eb545552de21991c2357b3
   src/roboticsgroup_gazebo_plugins:
     type: git
     url: https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins
