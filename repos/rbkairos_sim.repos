@@ -22,7 +22,7 @@ repositories:
   src/summit_xl_common:
     type: git
     url: https://github.com/RobotnikAutomation/summit_xl_common
-    version: 20ce43ee92076a7f23cfb2503624f440d2f45560
+    version: a4dcb10b170a0e6e0555890da4ded0c619b4fcfc
   src/universal_robot:
     type: git
     url: https://github.com/fmauch/universal_robot
@@ -30,4 +30,8 @@ repositories:
   src/wsg50-ros-pkg:
     type: git
     url: https://github.com/RobotnikAutomation/wsg50-ros-pkg
-    version: a1380d109bcb8676822f59deeeea1f758220f436
+    version: a1380d109bcb8676822f59deeeea1f758220f436  
+  src/robotnik_msgs:
+    type: git
+    url: https://github.com/RobotnikAutomation/robotnik_msgs
+    version: melodic-devel
