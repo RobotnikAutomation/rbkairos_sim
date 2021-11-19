@@ -10,7 +10,7 @@ repositories:
   src/rbkairos_common:
     type: git
     url: https://github.com/RobotnikAutomation/rbkairos_common
-    version: 64a1e945baa72a7a11eb545552de21991c2357b3
+    version: b73590dae0a26540879b050c534ef5447b193b48
   src/roboticsgroup_gazebo_plugins:
     type: git
     url: https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins
@@ -18,7 +18,7 @@ repositories:
   src/robotnik_sensors:
     type: git
     url: https://github.com/RobotnikAutomation/robotnik_sensors
-    version: 03c2918d09f579b35a5aa654207e7dec0d0996d2
+    version: melodic-devel
   src/summit_xl_common:
     type: git
     url: https://github.com/RobotnikAutomation/summit_xl_common
@@ -34,4 +34,4 @@ repositories:
   src/robotnik_msgs:
     type: git
     url: https://github.com/RobotnikAutomation/robotnik_msgs
-    version: melodic-devel
+    version: master
