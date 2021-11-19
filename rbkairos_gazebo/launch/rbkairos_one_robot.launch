@@ -61,45 +61,45 @@
                  " />
 
         <!-- start rbkairos_control nodes -->
-     		<include file="$(find rbkairos_control)/launch/rbkairos_control.launch">
-     			<arg name="prefix" value="$(arg prefix)"/>
-     			<arg name="sim" value="true"/>
+        <include file="$(find rbkairos_control)/launch/rbkairos_control.launch">
+            <arg name="prefix" value="$(arg prefix)"/>
+            <arg name="sim" value="true"/>
 
-     			<arg name="kinematics" value="omni"/>
+            <arg name="kinematics" value="omni"/>
 
-     			<arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
-     			<arg name="sim_arm_control" value="$(arg launch_arm)"/>
-     			<arg name="sim_gripper_control" value="$(arg launch_gripper)"/>
-          <arg name="arm_controllers" value="arm/pos_traj_controller"/>
-          <arg name="gripper_controllers" value="gripper/gripper_controller"/>
-     		</include>
+            <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
+            <arg name="sim_arm_control" value="$(arg launch_arm)"/>
+            <arg name="sim_gripper_control" value="$(arg launch_gripper)"/>
+        <arg name="arm_controllers" value="arm/pos_traj_controller"/>
+        <arg name="gripper_controllers" value="gripper/gripper_controller"/>
+        </include>
 
         <!-- pad -->
         <include if="$(arg launch_pad)" file="$(find summit_xl_pad)/launch/summit_xl_pad.launch"/>
 
         <!-- base_hw_sim -->
-    		<include if="$(arg launch_base_hw_sim)" file="$(find robotnik_base_hw_sim)/launch/summit_xl_hw_sim.launch">
-    			<arg name="prefix" value="$(arg prefix)"/>
-    		</include>
+        <include if="$(arg launch_base_hw_sim)" file="$(find robotnik_base_hw_sim)/launch/summit_xl_hw_sim.launch">
+            <arg name="prefix" value="$(arg prefix)"/>
+        </include>
 
-    		<group if="$(arg launch_battery_estimator)">
-    			<!-- start dock_manager node -->
-    			<include file="$(find charge_manager)/launch/charge_manager.launch">
-    				<arg name="docker_mode" value="manual_sw"/>
-    				<arg name="inverted_contact_relay_input" value="false"/>
-    				<arg name="contact_relay_input_number" value="2"/>
-    				<arg name="charger_relay_output_number" value="1"/>
-    			</include>
+        <group if="$(arg launch_battery_estimator)">
+            <!-- start dock_manager node -->
+            <include file="$(find charge_manager)/launch/charge_manager.launch">
+                <arg name="docker_mode" value="manual_sw"/>
+                <arg name="inverted_contact_relay_input" value="false"/>
+                <arg name="contact_relay_input_number" value="2"/>
+                <arg name="charger_relay_output_number" value="1"/>
+            </include>
 
-    			<!-- start battery_estimation node -->
-    			<include file="$(find battery_estimation)/launch/table_battery.launch">
-    				<arg name="battery_voltage" value="48"/>
-    				<arg name="read_voltage_from_analog_input" value="true"/>
-    				<arg name="voltage_analog_input_number" value="1" />
-    				<arg name="current_analog_input_number" value="2" />
-    			</include>
+            <!-- start battery_estimation node -->
+            <include file="$(find battery_estimation)/launch/table_battery.launch">
+                <arg name="battery_voltage" value="48"/>
+                <arg name="read_voltage_from_analog_input" value="true"/>
+                <arg name="voltage_analog_input_number" value="1" />
+                <arg name="current_analog_input_number" value="2" />
+            </include>
 
-    		</group>
+        </group>
         <!-- amcl and map server base-->
         <include if="$(arg launch_amcl_and_mapserver)" file="$(find summit_xl_localization)/launch/map_server.launch">
             <arg name="prefix" value="$(arg prefix)"/>
@@ -127,8 +127,7 @@
         </include>
 
         <!-- MoveGroup Moveit! -->
-        <include if="$(arg launch_move_group)" file="$(find rbkairos_ur5_egh_moveit_config)/launch/rbkairos_moveit_config.launch">
-                <arg name="sim" value="true"/>
+        <include if="$(arg launch_move_group)" file="$(find rbkairos_ur5_egh_moveit_config)/launch/demo.launch">
         </include>
 
     </group>
