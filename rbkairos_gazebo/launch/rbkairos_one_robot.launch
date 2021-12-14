@@ -128,6 +128,7 @@
 
         <!-- MoveGroup Moveit! -->
         <include if="$(arg launch_move_group)" file="$(find rbkairos_ur5_egh_moveit_config)/launch/demo.launch">
+            <arg name="load_robot_description" value="false"/>
         </include>
 
     </group>
