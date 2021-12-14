@@ -22,7 +22,7 @@ repositories:
   src/summit_xl_common:
     type: git
     url: https://github.com/RobotnikAutomation/summit_xl_common
-    version: a4dcb10b170a0e6e0555890da4ded0c619b4fcfc
+    version: 3e39d403d041140775a8326e701accb2be9cad9d
   src/universal_robot:
     type: git
     url: https://github.com/fmauch/universal_robot
