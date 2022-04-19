@@ -6,11 +6,11 @@ repositories:
   src/egh_gripper_common:
     type: git
     url: https://github.com/RobotnikAutomation/egh_gripper_common
-    version: 374cc5dec5c9c9fca8bca4a37dadd377b8224af1
+    version: master
   src/rbkairos_common:
     type: git
     url: https://github.com/RobotnikAutomation/rbkairos_common
-    version: 83135f89897a17f4be208ce6b8417e8b38ac42c8
+    version: 56dc0490b40f337180393e1be4ebd5a5a33fd3b2
   src/roboticsgroup_gazebo_plugins:
     type: git
     url: https://github.com/RobotnikAutomation/roboticsgroup_gazebo_plugins
@@ -22,7 +22,7 @@ repositories:
   src/summit_xl_common:
     type: git
     url: https://github.com/RobotnikAutomation/summit_xl_common
-    version: 3e39d403d041140775a8326e701accb2be9cad9d
+    version: 1b734cbe54709950c9929e685fed069d6db57dc3
   src/universal_robot:
     type: git
     url: https://github.com/fmauch/universal_robot
@@ -30,7 +30,7 @@ repositories:
   src/wsg50-ros-pkg:
     type: git
     url: https://github.com/RobotnikAutomation/wsg50-ros-pkg
-    version: a1380d109bcb8676822f59deeeea1f758220f436  
+    version: master  
   src/robotnik_msgs:
     type: git
     url: https://github.com/RobotnikAutomation/robotnik_msgs
