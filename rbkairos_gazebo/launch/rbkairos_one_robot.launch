@@ -14,6 +14,9 @@
     <arg name="launch_amcl_and_mapserver" default="true"/>
     <arg name="launch_gmapping" default="false"/>
     <arg name="launch_move_base" default="false"/>
+    
+    <arg name="map_package" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder" default="maps"/>
     <arg name="map_file" default="empty/empty.yaml"/>
     <arg name="robot_localization_mode" default="odom"/><!-- odom, complete (including gps)-->
     <arg name="ros_planar_move_plugin" default="true"/><!-- plugin to simulate omni drive -->
@@ -105,6 +108,7 @@
         <include if="$(arg launch_amcl_and_mapserver)" file="$(find summit_xl_localization)/launch/map_server.launch">
             <arg name="prefix" value="$(arg prefix)"/>
             <arg name="map_file" value="$(arg map_file)"/>
+            <arg name="maps_path" value="$(arg map_package)/$(arg map_folder)"/>
         </include>
         <include if="$(arg launch_amcl_and_mapserver)" file="$(find summit_xl_localization)/launch/amcl.launch">
             <arg name="prefix" value="$(arg prefix)"/>

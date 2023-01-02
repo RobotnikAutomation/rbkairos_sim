@@ -31,6 +31,8 @@
     <arg name="gmapping_robot_a" default="false"/>
     <arg name="move_base_robot_a" default="false"/>
     <arg name="amcl_and_mapserver_a" default="false"/>
+    <arg name="map_package_a" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_a" default="maps"/>
     <arg name="map_file_a" default="$(arg default_map)"/>
     <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
     <arg name="launch_arm_a" default="true"/>
@@ -50,6 +52,8 @@
     <arg name="gmapping_robot_b" default="false"/>
     <arg name="move_base_robot_b" default="false"/>
     <arg name="amcl_and_mapserver_b" default="false"/>
+    <arg name="map_package_b" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_b" default="maps"/>
     <arg name="map_file_b" default="$(arg default_map)"/>
     <arg name="xacro_robot_b" default="$(arg default_xacro)"/>
     <arg name="launch_arm_b" default="true"/>
@@ -69,6 +73,8 @@
     <arg name="gmapping_robot_c" default="false"/>
     <arg name="move_base_robot_c" default="false"/>
     <arg name="amcl_and_mapserver_c" default="false"/>
+    <arg name="map_package_c" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_c" default="maps"/>
     <arg name="map_file_c" default="$(arg default_map)"/>
     <arg name="launch_arm_c" default="true"/>
     <arg name="arm_model_c" default="$(arg default_arm_model)"/>
@@ -90,6 +96,8 @@
         <arg name="launch_robot_localization" value="$(arg localization_robot_a)"/>
         <arg name="launch_amcl_and_mapserver" value="$(arg amcl_and_mapserver_a)"/>
         <arg name="launch_gmapping" value="$(arg gmapping_robot_a)"/>
+        <arg name="map_package" value="$(arg map_package_a)"/>
+        <arg name="map_folder" value="$(arg map_folder_a)"/>
         <arg name="map_file" value="$(arg map_file_a)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_a)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
@@ -116,6 +124,8 @@
         <arg name="launch_robot_localization" value="$(arg localization_robot_b)"/>
         <arg name="launch_amcl_and_mapserver" value="$(arg amcl_and_mapserver_b)"/>
         <arg name="launch_gmapping" value="$(arg gmapping_robot_b)"/>
+        <arg name="map_package" value="$(arg map_package_b)"/>
+        <arg name="map_folder" value="$(arg map_folder_b)"/>
         <arg name="map_file" value="$(arg map_file_b)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_b)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>
@@ -142,6 +152,8 @@
         <arg name="launch_robot_localization" value="$(arg localization_robot_c)"/>
         <arg name="launch_amcl_and_mapserver" value="$(arg amcl_and_mapserver_c)"/>
         <arg name="launch_gmapping" value="$(arg gmapping_robot_c)"/>
+        <arg name="map_package" value="$(arg map_package_c)"/>
+        <arg name="map_folder" value="$(arg map_folder_c)"/>
         <arg name="map_file" value="$(arg map_file_c)"/>
         <arg name="launch_move_base" value="$(arg move_base_robot_c)"/>
         <arg name="ros_planar_move_plugin" value="$(arg ros_planar_move_plugin)"/>

@@ -21,6 +21,8 @@
     <arg name="id_robot_a" default="robot"/>
     <arg name="launch_robot_a" default="true"/>
     <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
+    <arg name="map_package_a" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_a" default="maps"/>
     <arg name="map_file_a" default="$(arg default_map)"/>
     <arg name="localization_robot_a" default="false"/>
     <arg name="gmapping_robot_a" default="false"/>
@@ -44,6 +46,8 @@
     <arg name="id_robot_b" default="robot_b"/>
     <arg name="launch_robot_b" default="false"/>
     <arg name="xacro_robot_b" default="$(arg default_xacro)"/>
+    <arg name="map_package_b" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_b" default="maps"/>
     <arg name="map_file_b" default="$(arg default_map)"/>
     <arg name="localization_robot_b" default="false"/>
     <arg name="gmapping_robot_b" default="false"/>
@@ -67,6 +71,8 @@
     <arg name="id_robot_c" default="robot_c"/>
     <arg name="launch_robot_c" default="false"/>
     <arg name="xacro_robot_c" default="$(arg default_xacro)"/>
+    <arg name="map_package_c" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_c" default="maps"/>
     <arg name="map_file_c" default="$(arg default_map)"/>
     <arg name="localization_robot_c" default="false"/>
     <arg name="gmapping_robot_c" default="false"/>
@@ -103,6 +109,8 @@
         <arg name="id_robot_a" value="$(arg id_robot_a)"/>
         <arg name="launch_robot_a" value="$(arg launch_robot_a)"/>
         <arg name="xacro_robot_a" value="$(arg xacro_robot_a)"/>
+        <arg name="map_package_a" value="$(arg map_package_a)"/>
+        <arg name="map_folder_a" value="$(arg map_folder_a)"/>
         <arg name="map_file_a" value="$(arg map_file_a)"/>
         <arg name="localization_robot_a" value="$(arg localization_robot_a)"/>
         <arg name="gmapping_robot_a" value="$(arg gmapping_robot_a)"/>
@@ -126,6 +134,8 @@
         <arg name="id_robot_b" value="$(arg id_robot_b)"/>
         <arg name="launch_robot_b" value="$(arg launch_robot_b)"/>
         <arg name="xacro_robot_b" value="$(arg xacro_robot_b)"/>
+        <arg name="map_package_b" value="$(arg map_package_b)"/>
+        <arg name="map_folder_b" value="$(arg map_folder_b)"/>
         <arg name="map_file_b" value="$(arg map_file_b)"/>
         <arg name="localization_robot_b" value="$(arg localization_robot_b)"/>
         <arg name="gmapping_robot_b" value="$(arg gmapping_robot_b)"/>
@@ -149,6 +159,8 @@
         <arg name="id_robot_c" value="$(arg id_robot_c)"/>
         <arg name="launch_robot_c" value="$(arg launch_robot_c)"/>
         <arg name="xacro_robot_c" value="$(arg xacro_robot_c)"/>
+        <arg name="map_package_c" value="$(arg map_package_c)"/>
+        <arg name="map_folder_c" value="$(arg map_folder_c)"/>
         <arg name="map_file_c" value="$(arg map_file_c)"/>
         <arg name="localization_robot_c" value="$(arg localization_robot_c)"/>
         <arg name="gmapping_robot_c" value="$(arg gmapping_robot_c)"/>
