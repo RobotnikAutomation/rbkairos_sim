@@ -37,7 +37,7 @@ cd catkin_ws
 vcs import --input \
  https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/melodic-devel/repos/rbkairos_sim.repos
 
-rosdep install --from-paths src --ignore-src -y
+rosdep install --from-paths src --ignore-src -y -r
 ```
 
 ### 3) Compile:
