@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM osrf/ros:noetic-desktop-full
 MAINTAINER Nuria Diaz< <ndiaz@robontik.es>
 
 # Non Root user
@@ -37,62 +37,65 @@ RUN apt-get update \
 RUN apt-get update \
 	&& apt-get install -q -y \
 		python3-vcstool \
+	&& apt-get install -q -y \
+		git \
 	&& apt-get clean -q -y \
 	&& apt-get autoremove -q -y \
 	&& rm -rf /var/lib/apt/lists/*
+
 
 RUN apt-get update \
 	&& apt-get install -q -y \
-		ros-melodic-global-planner \
-		ros-melodic-moveit-fake-controller-manager \
-		ros-melodic-hector-gazebo-plugins \
-		ros-melodic-moveit-planners-ompl \
-		ros-melodic-teb-local-planner \
-		ros-melodic-mavros-msgs \
-		ros-melodic-ros-control \
-		ros-melodic-imu-complementary-filter \
-		ros-melodic-pr2-moveit-config \
-		ros-melodic-moveit-ros-planning-interface \
-		ros-melodic-velocity-controllers \
-		ros-melodic-pr2-moveit-plugins \
-		ros-melodic-moveit-ros-visualization \
-		ros-melodic-move-base \
-		ros-melodic-geometric-shapes \
-		ros-melodic-eband-local-planner \
-		ros-melodic-map-server \
-		ros-melodic-moveit-kinematics \
-		ros-melodic-costmap-2d \
-		ros-melodic-twist-mux \
-		ros-melodic-moveit-ros-perception \
-		ros-melodic-moveit-ros-move-group \
-		ros-melodic-gmapping \
-		ros-melodic-moveit-setup-assistant \
-		ros-melodic-moveit-core \
-		ros-melodic-pr2-arm-kinematics \
-		ros-melodic-robot-localization \
-		ros-melodic-amcl \
-		ros-melodic-joy \
-		ros-melodic-geographic-msgs \
-		ros-melodic-ros-controllers \
-		ros-melodic-effort-controllers \
-		ros-melodic-topic-tools \
-		ros-melodic-tf2-web-republisher \
-		ros-melodic-rosbridge-server \
-		ros-melodic-moveit-simple-controller-manager \
-		ros-melodic-joint-state-publisher-gui \
+		ros-noetic-global-planner \
+		ros-noetic-moveit-fake-controller-manager \
+		ros-noetic-hector-gazebo-plugins \
+		ros-noetic-moveit-planners-ompl \
+		ros-noetic-teb-local-planner \
+		ros-noetic-mavros-msgs \
+		ros-noetic-ros-control \
+		ros-noetic-imu-complementary-filter \
+		#ros-noetic-pr2-moveit-config \
+		ros-noetic-moveit-ros-planning-interface \
+		ros-noetic-velocity-controllers \
+		#ros-noetic-pr2-moveit-plugins \
+		ros-noetic-moveit-ros-visualization \
+		ros-noetic-move-base \
+		ros-noetic-geometric-shapes \
+		#ros-noetic-eband-local-planner \
+		ros-noetic-map-server \
+		ros-noetic-moveit-kinematics \
+		ros-noetic-costmap-2d \
+		ros-noetic-twist-mux \
+		ros-noetic-moveit-ros-perception \
+		ros-noetic-moveit-ros-move-group \
+		ros-noetic-gmapping \
+		ros-noetic-moveit-setup-assistant \
+		ros-noetic-moveit-core \
+		ros-noetic-pr2-arm-kinematics \
+		ros-noetic-robot-localization \
+		ros-noetic-amcl \
+		ros-noetic-joy \
+		ros-noetic-geographic-msgs \
+		ros-noetic-ros-controllers \
+		ros-noetic-effort-controllers \
+		ros-noetic-topic-tools \
+		ros-noetic-tf2-web-republisher \
+		ros-noetic-rosbridge-server \
+		ros-noetic-moveit-simple-controller-manager \
+		ros-noetic-joint-state-publisher-gui \
 	&& apt-get clean -q -y \
 	&& apt-get autoremove -q -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 
-COPY ros_entrypoint.sh /
+COPY docker/ros_entrypoint.sh /
 
 USER $user_name
 
 RUN mkdir -p $ck_src_dir
 RUN true \
 	&& echo "PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc \
-	&& echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc \
+	&& echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc \
 	&& echo "source $ck_dir/devel/setup.bash" >> ~/.bashrc
 
 ARG gazebo_model_path=$user_home/.gazebo/
@@ -100,6 +103,7 @@ ARG gazebo_models_url=https://github.com/osrf/gazebo_models.git
 RUN true \
 	&& mkdir -p $gazebo_model_path/models \
 	&& chown -R $user_name: $gazebo_model_path \
+
 	&& git clone --depth 1 $gazebo_models_url $gazebo_model_path/models \
 	&& rm -rf $gazebo_model_path/models/.git \
 	&& true
@@ -128,7 +132,7 @@ ARG repo_file_list_to_use=/tmp/$repo_file
 ARG fresh_download_of_git_repos=no
 
 RUN true \
-	&& vcs import --input $repo_file_list_to_use \
+	&& vcs import --input $repo_file_list_to_use --retry 10 --skip-existing\
 	&& rosdep update \
 	&& echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections \
 	&& sudo apt-get update \
@@ -138,7 +142,7 @@ RUN true \
 	&& sudo rm -rf /var/lib/apt/lists/*
 
 RUN true \
-	&& . /opt/ros/melodic/setup.sh \
+	&& . /opt/ros/noetic/setup.sh \
 	&& export ROS_PARALLEL_JOBS=-j$(nproc --all) \
 	&& catkin_make
 
