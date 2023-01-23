@@ -67,3 +67,21 @@ roslaunch rbkairos_sim_bringup rbkairos_complete.launch moveit_movegroup_a:=true
 
 
 The default configuration will load a RB-Kairos + UR5 + EGH gripper. Other configurations are also available.
+
+
+
+## Docker Usage
+
+In order to run this simulation you will need nvidia graphical accelation
+
+### Installation of required files
+
+### Usage
+
+git clone https://github.com/RobotnikAutomation/rbkairos_sim.git
+cd rbkairos_sim
+git checkout melodic-devel
+export ROS_BU_PKG="rbkairos_sim_bringup"
+export ROS_BU_LAUNCH="rbkairos_complete.launch"
+cd docker
+docker compose up
