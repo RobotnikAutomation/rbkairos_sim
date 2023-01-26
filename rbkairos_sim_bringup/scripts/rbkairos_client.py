@@ -3,23 +3,24 @@
 import rospy
 import actionlib
 import math
+import time
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+from control_msgs.msg import GripperCommandAction,GripperCommandGoal
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
+
 
 class RBKairosClient:
     def __init__(self):
-        # Variables de clase, crear cliente de move_base, etc
         self.client = actionlib.SimpleActionClient('move_base',MoveBaseAction)
+        self.client_gripper = actionlib.SimpleActionClient('gripper/gripper_controller/gripper_cmd',GripperCommandAction)
         self.pos = rospy.get_param('~actions')
         print("Waiting for action server to start.")
         self.client.wait_for_server()
         print("Action server started, sending goal.")
         
-
     def send_move_base_goal(self, x, y, theta, frame_id="robot_map"):
 
         # transformar theta a quaternion
-       
         q = quaternion_from_euler(0.0, 0.0, theta)
           
         # crear mensaje move_base
@@ -35,11 +36,29 @@ class RBKairosClient:
         wait = self.client.wait_for_result()
   
         if not wait:
-            rospy.logerr("Action server not available!")
-            rospy.signal_shutdown("Action server not available!")
+            rospy.logerr("Action server movebase not available!")
+            rospy.signal_shutdown("Action server movebase not available!")
         else:
             return self.client.get_result()
+ 
+    def send_move_gripper(self, position, max_effort):
+   
+        #crear mensaje move_gripper
+        goal = GripperCommandGoal()
 
+        goal.command.position = position
+        goal.command.max_effort = max_effort
+
+        # enviar el goal a move_gripper
+        self.client_gripper.send_goal(goal)
+        time.sleep(20)
+        wait = self.client_gripper.wait_for_result()
+
+        if not wait:
+            rospy.logerr("Action server gripper not available!")
+            rospy.signal_shutdown("Action server gripper not available!")
+        else:
+            return self.client_gripper.get_result()
 
     def is_goto_valid(self, goto):
 
@@ -58,7 +77,6 @@ class RBKairosClient:
         if "frame_id" not in goto:
             goto["frame_id"] = "robot_map"  
             rospy.logwarn("Varible 'frame_id' is missing. The default value will be set")
-
         
         if type(goto["x"]) is not float:
             rospy.logerr("The type of the variable 'x' is not a float")
@@ -78,6 +96,24 @@ class RBKairosClient:
 
         return True          
 
+    def is_movegripper_valid(self, movegripper):
+
+        if "position" not in movegripper:
+            rospy.logerr("Variable 'position' is missing")
+            return False
+
+        if "max_effort" not in movegripper:
+            rospy.logerr("Variable 'max_effort' is missing")
+            return False
+
+        if type(movegripper["position"]) is not float:
+            rospy.logerr("The type of the variable 'position' is not a float")
+            return False
+
+        if type(movegripper["max_effort"]) is not float:
+            rospy.logerr("The type of the variable 'max_effort' is not a float")
+            return False
+
     def is_sequence_valid(self):
 
         for action in self.pos:
@@ -90,6 +126,9 @@ class RBKairosClient:
             action_valid = False
             if action_type == "GOTO":
                 action_valid = self.is_goto_valid(action)
+            if action_type == "MOVEGRIPPER":
+                action_valid = self.is_movegripper_valid(action)
+
 
             if action_valid == False:
                 return False
@@ -99,14 +138,19 @@ class RBKairosClient:
     def goto(self, goto):
         rbkairos_client.send_move_base_goal(goto["x"], goto["y"], goto["theta"], goto["frame_id"])
 
+    def movegripper(self, movegripper):
+        rbkairos_client.send_move_gripper(movegripper["position"],movegripper["max_effort"])
+         
     def execute_sequence(self):
 
         for action in self.pos:
             action_type = action["type"]
-
+            rospy.loginfo("An action " + action_type + " will be executed.")
             if action_type == "GOTO":
-                action_valid = self.goto(action)       
-         
+                action_valid = self.goto(action)    
+            if action_type == "MOVEGRIPPER":
+                action_valid = self.movegripper(action)  
+   
 
 if __name__ == '__main__':
     try:
@@ -114,9 +158,12 @@ if __name__ == '__main__':
         rbkairos_client = RBKairosClient()
 
         valid = rbkairos_client.is_sequence_valid()
-
+    
         if valid == True:
+            rospy.loginfo("The sequence is valid.")
             rbkairos_client.execute_sequence()
-         
+            rospy.loginfo("The sequence is over.")
+
+        
     except rospy.ROSInterruptException:
         rospy.loginfo("Navigation test finished.")

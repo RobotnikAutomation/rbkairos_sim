@@ -4,8 +4,16 @@ actions:
   y: 2.0
   theta: 0.0
 
+- type: MOVEGRIPPER
+  position: 4.0
+  max_effort: 0.0
+
 - type: GOTO
   x: -3.0
   y: -2.0
   theta: 2.0
   frame_id: "robot_map"
+
+- type: MOVEGRIPPER
+  position: 0.0
+  max_effort: 0.0
