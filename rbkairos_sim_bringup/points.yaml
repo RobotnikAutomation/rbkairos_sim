@@ -1,0 +1,11 @@
+actions:
+- type: GOTO
+  x: 1.0
+  y: 2.0
+  theta: 0.0
+
+- type: GOTO
+  x: -3.0
+  y: -2.0
+  theta: 2.0
+  frame_id: "robot_map"

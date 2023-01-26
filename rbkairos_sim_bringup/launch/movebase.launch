@@ -1,0 +1,6 @@
+
+<launch>
+  <node name="movebase" pkg="rbkairos_sim_bringup" type="rbkairos_client.py" ns="robot" output="screen">
+    <rosparam command="load" file="$(find rbkairos_sim_bringup)/points.yaml" />
+  </node>
+</launch>
