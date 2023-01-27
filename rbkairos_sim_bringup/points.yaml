@@ -1,8 +1,20 @@
+arm_joints: &arm_joints
+  - robot_arm_shoulder_pan_joint
+  - robot_arm_shoulder_lift_joint
+  - robot_arm_elbow_joint
+  - robot_arm_wrist_1_joint
+  - robot_arm_wrist_2_joint
+  - robot_arm_wrist_3_joint
+
 actions:
 - type: GOTO
   x: 1.0
   y: 2.0
   theta: 0.0
+
+- type: MOVEARM
+  joints: *arm_joints
+  positions: [-1.947787, -0.502655, -1.507964, -0.879646, -0.251327, -0.000001]
 
 - type: MOVEGRIPPER
   position: 4.0
@@ -10,10 +22,15 @@ actions:
 
 - type: GOTO
   x: -3.0
-  y: -2.0
+  y: 2.0
   theta: 2.0
   frame_id: "robot_map"
+
+- type: MOVEARM
+  joints: *arm_joints
+  positions: [-0.439823, -1.507964, -0.879646, -2.010619, 0.251327, -0.000000]
 
 - type: MOVEGRIPPER
   position: 0.0
   max_effort: 0.0
+
