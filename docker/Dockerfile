@@ -166,4 +166,4 @@ ENV ROS_BU_LAUNCH "rbkairos_complete.launch"
 ENV CATKIN_WS $ck_dir
 ENV RBK_CATKIN_PATH $ck_dir
 
-CMD bash -c "/ros_entrypoint.sh roslaunch ${ROS_BU_PKG} ${ROS_BU_LAUNCH} moveit_movegroup_a:=true"
+CMD bash -c "/ros_entrypoint.sh roslaunch ${ROS_BU_PKG} ${ROS_BU_LAUNCH}"
