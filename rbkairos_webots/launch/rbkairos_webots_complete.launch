@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- arg to config the launch file-->
+
+    <arg name="launch_rviz" default="true"/>
+    <arg name="no_gui" default="false" doc="Start Webots with minimal GUI"/>
+    <arg name="webots_world" default="$(find rbkairos_webots)/worlds/prueba_mundo2.wbt"/>
+    <arg name="default_map" default="empty/map_empty.yaml"/>
+    <arg name="default_arm_model" default="ur5"/>
+    <arg name="default_gripper_model" default="egh"/>
+    <!-- <arg name="default_xacro" default="versions/rbkairos_$(arg default_arm_model)_$(arg default_gripper_model).urdf.xacro"/> -->
+    <arg name="default_xacro" default="rbkairos_$(arg default_arm_model).urdf.xacro"/>
+    <arg name="omni_drive" default="false"/>
+    <!-- Needed if using ur_description from fmauch_universal_robot -->
+    <arg name="load_arm_kinematics_file" default="false"/>
+    <!-- simulation of motor controllers topics and battery estimation -->
+    <arg name="launch_base_hw_sim" default="false"/>
+    <arg name="launch_battery_estimator" default="false"/>
+    <arg name="use_gpu" default="false"/>
+    <!-- Multiple robot configuration -->
+    <arg name="multirobot" default="false" />
+    <arg name="link_maps" default="$(arg multirobot)" />
+
+    <!-- arguments robot a -->
+    <arg name="id_robot_a" default="robot"/>
+    <arg name="launch_robot_a" default="true"/>
+    <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
+    <arg name="map_package_a" default="$(find summit_xl_localization)"/>
+    <arg name="map_folder_a" default="maps"/>
+    <arg name="map_file_a" default="$(arg default_map)"/>
+    <arg name="localization_robot_a" default="true"/>
+    <arg name="gmapping_robot_a" default="true"/>
+    <arg name="move_base_robot_a" default="true"/>
+    <arg name="amcl_and_mapserver_a" default="false"/>
+    <arg name="launch_pad_a" default="true"/>
+    <!-- spawn position robot a -->
+    <arg name="x_init_pose_robot_a" default="5" />
+    <arg name="y_init_pose_robot_a" default="2" />
+    <arg name="z_init_pose_robot_a" default="0" />
+    <arg name="yaw_init_pose_robot_a" default="0" />
+    <!-- arm robot a -->
+    <arg name="launch_arm_a" default="true"/>
+    <arg name="arm_model_a" default="$(arg default_arm_model)"/>
+    <arg name="moveit_movegroup_a" default="false"/>
+    <!-- gripper robot a -->
+    <arg name="launch_gripper_a" default="true"/>
+    <arg name="gripper_model_a" default="$(arg default_gripper_model)"/>
+ 
+
+    <group if="$(arg link_maps)"> 
+        <node pkg="tf" type="static_transform_publisher" name="tf_1" args="0 0 0 0 0 0 robot_map $(arg id_robot_a)_map 5" /> 
+        <node pkg="tf" type="static_transform_publisher" name="tf_2" args="0 0 0 0 0 0 robot_map $(arg id_robot_b)_map 5" /> 
+        <node pkg="tf" type="static_transform_publisher" name="tf_3" args="0 0 0 0 0 0 robot_map $(arg id_robot_c)_map 5" /> 
+    </group>
+
+    <group ns="$(arg id_robot_a)">
+        <include file="$(find summit_xl_navigation)/launch/move.launch"> 
+            <arg name="id_robot" default="$(arg id_robot_a)"/>
+        </include>
+        <include file="$(find summit_xl_navigation)/launch/dockers.launch"> 
+            <arg name="id_robot" default="$(arg id_robot_a)"/>
+            <arg name="differential_robot" default="false"/>
+        </include>
+    </group>
+
+
+
+    <!-- RBKAIROS GAZEBO -->
+  
+    <include file="$(find rbkairos_webots)/launch/rbkairos_webots.launch">
+
+        <!-- general args -->
+        <arg name="launch_rviz" value="$(arg launch_rviz)"/>
+        <arg name="webots_world" value="$(arg webots_world)"/>
+        <arg name="ros_planar_move_plugin" value="$(arg omni_drive)"/>
+        <arg name="load_arm_kinematics_file" value="$(arg load_arm_kinematics_file)"/>
+        <arg name="launch_base_hw_sim" value="$(arg launch_base_hw_sim)"/>
+        <arg name="launch_battery_estimator" value="$(arg launch_battery_estimator)"/>
+        <arg name="use_gpu" value="$(arg use_gpu)"/>
+
+        <!-- robot_a args -->
+        <arg name="id_robot_a" value="$(arg id_robot_a)"/>
+        <arg name="launch_robot_a" value="$(arg launch_robot_a)"/>
+        <arg name="xacro_robot_a" value="$(arg xacro_robot_a)"/>
+        <arg name="map_package_a" value="$(arg map_package_a)"/>
+        <arg name="map_folder_a" value="$(arg map_folder_a)"/>
+        <arg name="map_file_a" value="$(arg map_file_a)"/>
+        <arg name="localization_robot_a" value="$(arg localization_robot_a)"/>
+        <arg name="gmapping_robot_a" value="$(arg gmapping_robot_a)"/>
+        <arg name="move_base_robot_a" value="$(arg move_base_robot_a)"/>
+        <arg name="amcl_and_mapserver_a" value="$(arg amcl_and_mapserver_a)"/>
+        <arg name="launch_pad_a" value="$(arg launch_pad_a)"/>
+        <!-- robot_a spawn position args -->
+        <arg name="x_init_pose_robot_a" value="$(arg x_init_pose_robot_a)"/>
+        <arg name="y_init_pose_robot_a" value="$(arg y_init_pose_robot_a)"/>
+        <arg name="z_init_pose_robot_a" value="$(arg z_init_pose_robot_a)"/>
+        <arg name="yaw_init_pose_robot_a" value="$(arg yaw_init_pose_robot_a)"/>
+        <!-- robot_a arm args -->
+        <arg name="launch_arm_a" value="$(arg launch_arm_a)"/>
+        <arg name="arm_model_a" value="$(arg arm_model_a)"/>
+        <arg name="moveit_movegroup_a" value="$(arg moveit_movegroup_a)"/>
+        <!-- robot_a gripper args -->
+        <arg name="launch_gripper_a" value="$(arg launch_gripper_a)"/>
+        <arg name="gripper_model_a" value="$(arg gripper_model_a)"/>       
+
+
+    </include> 
+
+
+</launch>

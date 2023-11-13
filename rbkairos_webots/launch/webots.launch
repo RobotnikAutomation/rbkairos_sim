@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world" default="$(find rbkairos_webots)/worlds/empty.wbt" doc="Path to the world to load"/>
+  <arg name="mode" default="realtime" doc="Startup mode"/>
+  <arg name="no_gui" default="false" doc="Start Webots with minimal GUI"/>
+  <arg name="id_robot" default="robot"/>
+  <arg name="coords" default="0.0,0.0,0.0"/>
+
+  <!-- Then open webots with generated world file -->
+  <node name="webots" pkg="webots_utilities" type="webots_launcher.py"
+    args="--id_robot=$(arg id_robot) --world=$(arg world) --coords=$(arg coords) --mode=$(arg mode) --no-gui=$(arg no_gui)"
+    required="true" output="screen"/>
+
+</launch>

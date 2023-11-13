@@ -1,0 +1,811 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the Rbkairos
+# Extracted from: /home/ssanchez/repos/rb_kairos_sim/catkin_ws/rbkairos_ur5.urdf
+
+PROTO rbkairos_ur5_robot [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "rbkairos_ur5_robot"  # Is `Robot.name`.
+  field  SFString    controller      "webots_ros_interface"      # Is `Robot.controller`.
+  field  MFString    controllerArgs  [
+    "--clock"
+    "--use-sim-time"
+    "--synchronize"
+    "--auto-publish"
+    "--use-ros-control"
+    "--name=robot"
+  ]            # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""          # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE       # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE       # Is `Robot.selfCollision`.
+  field MFNode     toolSlot        []           # Extend the robot with new nodes at the end of the arm.
+]
+{
+  Robot {
+    name IS name
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.001000 0.001000 0.001000
+        }
+      }
+      Solid {
+        translation 0.000000 0.000000 0.127000
+        children [
+          Shape {
+            appearance DEF black PBRAppearance {
+              baseColor 0.000000 0.000000 0.000000
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF summit_xls_chassis Mesh {
+              url "../../summit_xl_common/summit_xl_description/meshes/bases/xls/summit_xls_chassis.stl"
+            }
+          }
+          Solid {
+            translation 0 0 0.39062
+            children [
+              Shape {
+                appearance DEF DARKGREY PBRAppearance {
+                  baseColor 0.5 0.5 0.5
+                  transparency 0
+                  roughness 0
+                  metalness 0.9
+                  emissiveColor 0 0 0
+                }
+                geometry Mesh {
+                  url [
+                    "../../summit_xl_common/summit_xl_description/meshes/bases/xls/summit_xls_chapas_inox_tapas.stl"
+                  ]
+                }
+              }
+            ]
+            name "base_chapa"
+          }
+          Solid {
+            translation 0 0.28931 0.29062
+            children [
+              DEF LOGO Shape {
+                appearance USE DARKGREY
+                geometry Mesh {
+                  url [
+                    "../../summit_xl_common/summit_xl_description/meshes/bases/xls/robotnik_logo_chasis.stl"
+                  ]
+                }
+              }
+            ]
+            name "base_logo_left"
+          }
+          Solid {
+            translation 0 -0.28931 0.29062
+            rotation 0.0 0.0 1 3.141593
+            children [
+              USE LOGO
+            ]
+            name "base_logo_right"
+          }
+          Solid {
+            translation 0.345 0 0
+            rotation 0.0 0.0 -1 1.570796
+            children [
+              USE LOGO
+            ]
+            name "base_logo_front"
+          }
+          Solid {
+            translation -0.345 0 0
+            rotation 0.0 0.0 1 1.570796
+            children [
+              USE LOGO
+            ]
+            name "base_logo_rear"
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.000000 1.000000 0.000000
+              anchor 0.222500 -0.204500 0.000000
+            }
+            device [
+              RotationalMotor {
+                name "robot_front_right_wheel_joint"
+                maxVelocity 100.0
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "robot_front_right_wheel_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.222500 -0.204500 0.000000
+              children [
+                DEF omni_wheel_2_visual CadShape {
+                  url "../../summit_xl_common/summit_xl_description/meshes/wheels/omni_wheel_2.dae"
+                }
+              ]
+              name "robot_front_right_wheel_link"
+              boundingObject Pose {
+                rotation 1.000000 0.000000 0.000000 1.570796
+                children [
+                  Cylinder {
+                    radius 0.127
+                    height 0.087
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 6.500000
+                centerOfMass [ 0.000000 0.000000 0.000000 ]
+                inertiaMatrix [
+                  3.030950e-02 5.241925e-02 3.030950e-02
+                  0.000000e+00 0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.000000 1.000000 0.000000
+              anchor 0.222500 0.204500 0.000000
+            }
+            device [
+              RotationalMotor {
+                name "robot_front_left_wheel_joint"
+                maxVelocity 100.0
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "robot_front_left_wheel_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.222500 0.204500 0.000000
+              children [
+                DEF omni_wheel_1_visual CadShape {
+                  url "../../summit_xl_common/summit_xl_description/meshes/wheels/omni_wheel_1.dae"
+                }
+              ]
+              name "robot_front_left_wheel_link"
+              boundingObject Pose {
+                rotation 1.000000 0.000000 0.000000 1.570796
+                children [
+                  Cylinder {
+                    radius 0.127
+                    height 0.087
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 6.500000
+                centerOfMass [ 0.000000 0.000000 0.000000 ]
+                inertiaMatrix [
+                  3.030950e-02 5.241925e-02 3.030950e-02
+                  0.000000e+00 0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.000000 1.000000 0.000000
+              anchor -0.222500 0.204500 0.000000
+            }
+            device [
+              RotationalMotor {
+                name "robot_back_left_wheel_joint"
+                maxVelocity 100.0
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "robot_back_left_wheel_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.222500 0.204500 0.000000
+              children [
+                USE omni_wheel_1_visual
+              ]
+              name "robot_back_left_wheel_link"
+              boundingObject Pose {
+                rotation 1.000000 0.000000 0.000000 1.570796
+                children [
+                  Cylinder {
+                    radius 0.127
+                    height 0.087
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 6.500000
+                centerOfMass [ 0.000000 0.000000 0.000000 ]
+                inertiaMatrix [
+                  3.030950e-02 5.241925e-02 3.030950e-02
+                  0.000000e+00 0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.000000 1.000000 0.000000
+              anchor -0.222500 -0.204500 0.000000
+            }
+            device [
+              RotationalMotor {
+                name "robot_back_right_wheel_joint"
+                maxVelocity 100.0
+                maxTorque 100.0
+              }
+              PositionSensor {
+                name "robot_back_right_wheel_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.222500 -0.204500 0.000000
+              children [
+                USE omni_wheel_2_visual
+              ]
+              name "robot_back_right_wheel_link"
+              boundingObject Pose {
+                rotation 1.000000 0.000000 0.000000 1.570796
+                children [
+                  Cylinder {
+                    radius 0.127
+                    height 0.087
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 6.500000
+                centerOfMass [ 0.000000 0.000000 0.000000 ]
+                inertiaMatrix [
+                  3.030950e-02 5.241925e-02 3.030950e-02
+                  0.000000e+00 0.000000e+00 0.000000e+00
+                ]
+              }
+            }
+          }
+
+          Pose {
+            translation -0.0467 0.047 0.0252
+            rotation 1 0 0 -3.1415923071795864
+            children [
+              DEF SCREW Group {
+                children [
+                  Transform {
+                    scale 1.1 1.1 1.1
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Cylinder {
+                          height 0.04
+                          radius 0.0044
+                        }
+                      }
+                    ]
+                  }
+                  DEF CYLINDER Pose {
+                    translation 0 0 0.02
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          textureTransform TextureTransform {
+                            rotation 1.5708
+                            scale 1.6 2
+                          }
+                        }
+                        geometry Cylinder {
+                          height 0.04
+                          radius 0.0044
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+
+          Solid {
+            translation 0.000000 0.000000 0.4
+            children [
+              DEF base_visual CadShape {
+                url "../../universal_robot/ur_description/meshes/ur5/visual/base.dae"
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0.000000 0.000000 1.000000
+                  anchor 0.000000 0.000000 0.089159
+                }
+                device [
+                  RotationalMotor {
+                    name "robot_arm_shoulder_pan_joint"
+                    maxVelocity 3.15
+                    minPosition -6.2831853
+                    maxPosition 6.2831853
+                    maxTorque 150.0
+                  }
+                  PositionSensor {
+                    name "robot_arm_shoulder_pan_joint_sensor"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0.000000 0.000000 0.089159
+                  children [
+                    DEF shoulder_visual CadShape {
+                      url "../../universal_robot/ur_description/meshes/ur5/visual/shoulder.dae"
+                    }
+                    HingeJoint {
+                      jointParameters HingeJointParameters {
+                        axis 0.000000 1.000000 0.000000
+                        anchor 0.000000 0.135850 0.000000
+                      }
+                      device [
+                        RotationalMotor {
+                          name "robot_arm_shoulder_lift_joint"
+                          maxVelocity 3.15
+                          minPosition -6.2831853
+                          maxPosition 6.2831853
+                          maxTorque 150.0
+                        }
+                        PositionSensor {
+                          name "robot_arm_shoulder_lift_joint_sensor"
+                        }
+                      ]
+                      endPoint Solid {
+                        translation 0.000000 0.135850 0.00000
+                        rotation 0.000000 1.000000 0.000000 1.570796
+                        children [
+                          DEF upperarm_visual CadShape {
+                            url "../../universal_robot/ur_description/meshes/ur5/visual/upperarm.dae"
+                          }
+                          HingeJoint {
+                            jointParameters HingeJointParameters {
+                              axis 0.000000 1.000000 0.000000
+                              anchor 0.000000 -0.119700 0.425000
+                            }
+                            device [
+                              RotationalMotor {
+                                name "robot_arm_elbow_joint"
+                                maxVelocity 3.15
+                                minPosition -6.2831853
+                                maxPosition 6.2831853
+                                maxTorque 150.0
+                              }
+                              PositionSensor {
+                                name "robot_arm_elbow_joint_sensor"
+                              }
+                            ]
+                            endPoint Solid {
+                              translation 0.000000 -0.119700 0.425000
+                              children [
+                                DEF forearm_visual CadShape {
+                                  url "../../universal_robot/ur_description/meshes/ur5/visual/forearm.dae"
+                                }
+                                HingeJoint {
+                                  jointParameters HingeJointParameters {
+                                    axis 0.000000 1.000000 0.000000
+                                    anchor 0.000000 0.000000 0.392250
+                                  }
+                                  device [
+                                    RotationalMotor {
+                                      name "robot_arm_wrist_1_joint"
+                                      maxVelocity 3.2
+                                      minPosition -6.2831853
+                                      maxPosition 6.2831853
+                                      maxTorque 28.0
+                                    }
+                                    PositionSensor {
+                                      name "robot_arm_wrist_1_joint_sensor"
+                                    }
+                                  ]
+                                  endPoint Solid {
+                                    translation 0.000000 0.000000 0.392250
+                                    rotation 0.000000 1.000000 0.000000 1.570796
+                                    children [
+                                      DEF wrist1_visual CadShape {
+                                        url "../../universal_robot/ur_description/meshes/ur5/visual/wrist1.dae"
+                                      }
+                                      HingeJoint {
+                                        jointParameters HingeJointParameters {
+                                          axis 0.000000 0.000000 1.000000
+                                          anchor 0.000000 0.093000 0.000000
+                                        }
+                                        device [
+                                          RotationalMotor {
+                                            name "robot_arm_wrist_2_joint"
+                                            maxVelocity 3.2
+                                            minPosition -6.2831853
+                                            maxPosition 6.2831853
+                                            maxTorque 28.0
+                                          }
+                                          PositionSensor {
+                                            name "robot_arm_wrist_2_joint_sensor"
+                                          }
+                                        ]
+                                        endPoint Solid {
+                                          translation 0.000000 0.093000 0.000000
+                                          children [
+                                            DEF wrist2_visual CadShape {
+                                              url "../../universal_robot/ur_description/meshes/ur5/visual/wrist2.dae"
+                                            }
+                                            HingeJoint {
+                                              jointParameters HingeJointParameters {
+                                                axis 0.000000 1.000000 0.000000
+                                                anchor 0.000000 0.000000 0.094650
+                                              }
+                                              device [
+                                                RotationalMotor {
+                                                  name "robot_arm_wrist_3_joint"
+                                                  maxVelocity 3.2
+                                                  minPosition -6.2831853
+                                                  maxPosition 6.2831853
+                                                  maxTorque 28.0
+                                                }
+                                                PositionSensor {
+                                                  name "robot_arm_wrist_3_joint_sensor"
+                                                }
+                                              ]
+                                              endPoint Solid {
+                                                translation 0.000000 0.000000 0.094650
+                                                children [
+                                                  DEF wrist3_visual CadShape {
+                                                    url "../../universal_robot/ur_description/meshes/ur5/visual/wrist3.dae"
+                                                  }
+                                                  Solid {
+                                                    translation 0.000000 0.082300 0.000000
+                                                    rotation 0.000000 0.000000 1.000000 1.570796
+                                                    name "ee_link"
+                                                    boundingObject Pose {
+                                                      translation -0.010000 0.000000 0.000000
+                                                      children [
+                                                        Box {
+                                                           size 0.010000 0.010000 0.010000
+                                                        }
+                                                      ]
+                                                    }
+                                                    physics Physics {
+                                                    }
+                                                  }
+                                                ]
+                                                name "wrist_3_link"
+                                                boundingObject DEF wrist3 Mesh {
+                                                  url "../../universal_robot/ur_description/meshes/ur5/collision/wrist3.stl"
+                                                }
+                                                physics Physics {
+                                                  density -1
+                                                  mass 0.187900
+                                                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                                  inertiaMatrix [
+                                                    1.713647e-02 1.713647e-02 3.382200e-02
+                                                    0.000000e+00 0.000000e+00 0.000000e+00
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          ]
+                                          name "wrist_2_link"
+                                          boundingObject DEF wrist2 Mesh {
+                                            url "../../universal_robot/ur_description/meshes/ur5/collision/wrist2.stl"
+                                          }
+                                          physics Physics {
+                                            density -1
+                                            mass 1.219000
+                                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                            inertiaMatrix [
+                                              1.111728e-01 1.111728e-01 2.194200e-01
+                                              0.000000e+00 0.000000e+00 0.000000e+00
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                    name "wrist_1_link"
+                                    boundingObject DEF wrist1 Mesh {
+                                      url "../../universal_robot/ur_description/meshes/ur5/collision/wrist1.stl"
+                                    }
+                                    physics Physics {
+                                      density -1
+                                      mass 1.219000
+                                      centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                      inertiaMatrix [
+                                        1.111728e-01 1.111728e-01 2.194200e-01
+                                        0.000000e+00 0.000000e+00 0.000000e+00
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                              name "forearm_link"
+                              boundingObject DEF forearm Mesh {
+                                url "../../universal_robot/ur_description/meshes/ur5/collision/forearm.stl"
+                              }
+                              physics Physics {
+                                density -1
+                                mass 2.275000
+                                centerOfMass [ 0.000000 0.000000 0.250000 ]
+                                inertiaMatrix [
+                                  4.944331e-02 4.944331e-02 4.095000e-03
+                                  0.000000e+00 0.000000e+00 0.000000e+00
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                        name "upper_arm_link"
+                        boundingObject DEF upperarm Mesh {
+                          url "../../universal_robot/ur_description/meshes/ur5/collision/upperarm.stl"
+                        }
+                        physics Physics {
+                          density -1
+                          mass 8.393000
+                          centerOfMass [ 0.000000 0.000000 0.280000 ]
+                          inertiaMatrix [
+                            2.268907e-01 2.268907e-01 1.510740e-02
+                            0.000000e+00 0.000000e+00 0.000000e+00
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                  name "shoulder_link"
+                  boundingObject DEF shoulder Mesh {
+                    url "../../universal_robot/ur_description/meshes/ur5/collision/shoulder.stl"
+                  }
+                  physics Physics {
+                    density -1
+                    mass 3.700000
+                    centerOfMass [ 0.000000 0.000000 0.000000 ]
+                    inertiaMatrix [
+                      1.026750e-02 1.026750e-02 6.660000e-03
+                      0.000000e+00 0.000000e+00 0.000000e+00
+                    ]
+                  }
+                }
+              }
+            ]
+            name "base_link"
+            boundingObject DEF base Mesh {
+              url "../../universal_robot/ur_description/meshes/ur5/collision/base.stl"
+            }
+            physics Physics {
+              density -1
+              mass 4.000000
+              centerOfMass [ 0.000000 0.000000 0.000000 ]
+              inertiaMatrix [
+                4.433332e-03 4.433332e-03 7.200000e-03
+                0.000000e+00 0.000000e+00 0.000000e+00
+              ]
+            }
+          }
+          
+    
+          Solid {
+            translation 0.286500 -0.208940 0.297300
+            rotation 1.0 0.0 0.00 1.57
+            children [
+              DEF sick_s300_visual CadShape {
+                url "../../robotnik_sensors/meshes/sick_s300.dae"
+              }
+              Solid {
+                translation 0.000000 0.000000 0.116000
+                children [
+                  Lidar {
+                    name "front_laser"
+                    fieldOfView 4.712400
+                    horizontalResolution 541
+                    numberOfLayers 1
+                    minRange 0.100000
+                    maxRange 30.000000
+                    noise 0.001000
+                    resolution 0.030000
+                    defaultFrequency 15
+                  }
+                ]
+                name "robot_front_laser_link"
+              }
+            ]
+            name "robot_front_laser_base_link"
+            boundingObject DEF sick_s300 Mesh {
+              url "../../robotnik_sensors/meshes/sick_s300.dae"
+            }
+            physics Physics {
+              density -1
+              mass 1.200000
+              centerOfMass [ 0.000000 0.000000 0.075100 ]
+              inertiaMatrix [
+                3.434000e-03 3.350800e-03 2.164000e-03
+                0.000000e+00 0.000000e+00 0.000000e+00
+              ]
+            }
+          }
+          Solid {
+            translation -0.286500 0.208940 0.297300
+            rotation 1.0 0.0 0.00 1.57
+            children [
+              DEF sick_s300_visual CadShape {
+                url "../../robotnik_sensors/meshes/sick_s300.dae"
+              }
+              Solid {
+                translation 0.000000 0.000000 0.116000
+                children [
+                  Lidar {
+                    name "rear_laser"
+                    fieldOfView 4.712400
+                    horizontalResolution 541
+                    numberOfLayers 1
+                    minRange 0.100000
+                    maxRange 30.000000
+                    noise 0.001000
+                    resolution 0.030000
+                    defaultFrequency 15
+                  }
+                ]
+                name "robot_rear_laser_link"
+              }
+            ]
+            name "robot_rear_laser_base_link"
+            boundingObject DEF sick_s300 Mesh {
+              url "../../robotnik_sensors/meshes/sick_s300.dae"
+            }
+            physics Physics {
+              density -1
+              mass 1.200000
+              centerOfMass [ 0.000000 0.000000 0.075100 ]
+              inertiaMatrix [
+                3.434000e-03 3.350800e-03 2.164000e-03
+                0.000000e+00 0.000000e+00 0.000000e+00
+              ]
+            }
+          }
+          
+          Solid {
+            translation 0.36500 0.00000 0.30620
+            rotation 1.000000 0.000000 0.000000 1.570796
+            children [
+              DEF orbbec_astra_visual CadShape {
+                url "../../robotnik_sensors/meshes/orbbec_astra.dae"
+              }
+              Solid {
+                translation 0.000000 0.000000 0.116000
+                rotation 1.000000 0.000000 0.000000 -1.570796
+                children [
+                  Lidar {
+                    name "front_rgbd_camera_depth"
+                    fieldOfView 4.712400
+                    verticalFieldOfView 3.14
+                    horizontalResolution 541
+                    numberOfLayers 1
+                    minRange 0.100000
+                    maxRange 30.000000
+                    noise 0.001000
+                    resolution 0.030000
+                    defaultFrequency 15
+                  }
+                  Camera {
+                    name "front_rgbd_camera"
+                    fieldOfView 1.211259
+                    width 1920
+                    height 1080
+                    noise 0.007000
+                  }
+                ]
+                name "robot_front_rgbd_camera_link"
+              }
+            ]
+            name "robot_front_rgbd_camera_base_link"
+            boundingObject DEF sick_s300 Mesh {
+              url "../../robotnik_sensors/meshes/orbbec_astra.dae"
+            }
+            physics Physics {
+              density -1
+              mass 1.200000
+              centerOfMass [ 0.000000 0.000000 0.075100 ]
+              inertiaMatrix [
+                3.434000e-03 3.350800e-03 2.164000e-03
+                0.000000e+00 0.000000e+00 0.000000e+00
+              ]
+            }
+          }          
+          
+          Solid {
+            translation -0.197500 0.000000 0.159800
+            rotation 0.000000 0.000000 1.000000 0.000000
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.000000
+                  roughness 1.000000
+                  metalness 0
+                  emissiveColor 0.000000 0.000000 0.000000
+                }
+                geometry Box {
+                   size 0.001 0.001 0.001
+                }
+              }
+              InertialUnit {
+              name "imu/data inertial"
+            }
+            Accelerometer {
+              name "imu/data accelerometer"
+            }
+            Gyro {
+              name "imu/data gyro"
+            }
+            Compass {
+              name "imu/data compass"
+            }
+            ]
+            name "robot_imu_link"
+            boundingObject Box {
+               size 0.001000 0.001000 0.001000
+            }
+            physics Physics {
+              density -1
+              mass 0.050000
+              centerOfMass [ 0.000000 0.000000 0.010000 ]
+              inertiaMatrix [
+                3.333333e-06 3.333333e-06 3.333333e-06
+                0.000000e+00 0.000000e+00 0.000000e+00
+              ]
+            }
+          }
+        ]
+        name "robot_base_link"
+        boundingObject USE summit_xls_chassis
+        physics Physics {
+          density -1
+          mass 125.000000
+          centerOfMass [ 0.000000 0.000000 0.000000 ]
+          inertiaMatrix [
+            1.391000e+00 6.853000e+00 6.125000e+00
+            4.000000e-03 0.000000e+00 0.000000e+00
+          ]
+        }
+      }
+    ]
+    name "rbkairos_ur5_robot"
+    boundingObject Transform {
+    translation -0.02857 0 0.28
+    rotation 0 1 0 0
+      children [
+        Box {
+        size 0.5 0.5 0.20
+        }
+      ]
+     }
+    physics Physics {
+      density -1
+      mass 5.0
+      centerOfMass [
+        0 0 0
+      ]
+      inertiaMatrix [
+        7.1254 9.3921 15.4966
+        0.004 0 0
+      ]
+    }
+  
+  }
+}

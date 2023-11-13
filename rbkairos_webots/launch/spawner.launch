@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world" default="$(find rbkairos_webots)/worlds/empty.wbt" doc="Path to the world to load"/>
+  <arg name="id_robot" default="robot"/>
+  <arg name="proto_template" default="$(find rbkairos_webots)/protos/rbkairos_ur5.proto"/>
+  <arg name="coords" default="0.0,0.0,0.0"/>
+  <arg name="rot" default="0.0,0.0,0.0,0.0"/>
+
+  <!-- First spawn models into world file -->
+  <node name="robot_spawner" pkg="webots_utilities" type="robot_spawner.py"
+  args="--id_robot=$(arg id_robot) --proto_template=$(arg proto_template) --world=$(arg world) --coords=$(arg coords) --rot=$(arg rot)"
+  output="screen"/>
+</launch>
