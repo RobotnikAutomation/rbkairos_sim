@@ -35,7 +35,7 @@ mkdir catkin_ws
 cd catkin_ws
 
 vcs import --input \
- https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/noetic-devel/repos/rbkairos_sim.repos
+ https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/webots/repos/rbkairos_sim.repos
 
 rosdep install --from-paths src --ignore-src -y -r
 ```
