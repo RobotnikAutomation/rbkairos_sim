@@ -35,7 +35,3 @@ repositories:
     type: git
     url: https://github.com/RobotnikAutomation/robotnik_msgs
     version: master
-  src/webots_utilities:
-    type: git
-    url: https://github.com/RobotnikAutomation/webots_utilities
-    version: master
