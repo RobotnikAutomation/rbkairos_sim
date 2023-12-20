@@ -35,7 +35,7 @@ mkdir catkin_ws
 cd catkin_ws
 
 vcs import --input \
- https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/noetic-devel/repos/rbkairos_sim.repos
+ https://raw.githubusercontent.com/RobotnikAutomation/rbkairos_sim/webots/repos/rbkairos_sim.repos
 
 rosdep install --from-paths src --ignore-src -y -r
 ```
@@ -51,10 +51,10 @@ source devel/setup.bash
 
 
 ```
-roslaunch rbkairos_sim_bringup rbkairos_complete.launch
+roslaunch rbkairos_webots rbkairos_webots_complete.launch
 ```
 
-This launch files runs Gazebo and the ROS controllers to work with the RB-KAIROS robot. This launch accepts multiple parameters to work with.
+This launch files runs Webots and the ROS controllers to work with the RB-KAIROS robot. This launch accepts multiple parameters to work with.
 
 By default it runs a full world with all the standard packages for navigation, localization and manipulation.
 
@@ -62,7 +62,7 @@ If you want to launch Moveit you have to run:
 
 
 ```
-roslaunch rbkairos_sim_bringup rbkairos_complete.launch moveit_movegroup_a:=true
+roslaunch rbkairos_webots rbkairos_webots_complete.launch moveit_movegroup_a:=true
 ```
 
 
