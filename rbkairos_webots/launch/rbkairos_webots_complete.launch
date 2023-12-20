@@ -26,7 +26,7 @@
     <arg name="id_robot_a" default="robot"/>
     <arg name="launch_robot_a" default="true"/>
     <arg name="xacro_robot_a" default="$(arg default_xacro)"/>
-    <arg name="map_package_a" default="$(find summit_xl_localization)"/>
+    <arg name="map_package_a" default="$(find rbkairos_webots)"/>
     <arg name="map_folder_a" default="maps"/>
     <arg name="map_file_a" default="$(arg default_map)"/>
     <arg name="localization_robot_a" default="true"/>
