@@ -181,8 +181,7 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 install (FILES
-    rbkairos_complete.launch
-    rbkairos_complete_webots.launch
+    launch/rbkairos_complete.launch
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
