@@ -1,0 +1,21 @@
+<launch>
+    <arg name="node_name1" default="rb_theron_front_camera_info"/>
+    <param name="$(arg node_name1)/cameraTopicInfo" type="string" value="/robot/robot_front_rgbd_camera_color/camera_info" />
+    <param name="$(arg node_name1)/cameraTopic" type="string" value="/robot/robot_front_rgbd_camera_color/image" />
+    <param name="$(arg node_name1)/cameraFrameId" type="string" value="robot_front_rgbd_camera_color_optical_frame_link" />
+    <param name="$(arg node_name1)/imageHeight" type="int" value="1080" />
+    <param name="$(arg node_name1)/imageWidth" type="int" value="1920" />
+    <node pkg="webots_utilities" type="cameraInfoPublisher" name="$(arg node_name1)"  output="screen"/>
+
+    <arg name="node_name2" default="rb_theron_rear_camera_info"/>
+    <param name="$(arg node_name2)/cameraTopicInfo" type="string" value="/robot/robot_rear_rgbd_camera_color/camera_info" />
+    <param name="$(arg node_name2)/cameraTopic" type="string" value="/robot/robot_rear_rgbd_camera_color/image" />
+    <param name="$(arg node_name2)/cameraFrameId" type="string" value="robot_rear_rgbd_camera_color_optical_frame_link" />
+    <param name="$(arg node_name1)/imageHeight" type="int" value="1080" />
+    <param name="$(arg node_name1)/imageWidth" type="int" value="1920" />
+    <node pkg="webots_utilities" type="cameraInfoPublisher" name="$(arg node_name2)"  output="screen"/>
+
+  <node pkg="rosservice" type="rosservice" name="rosservice_lidar3d" args="call --wait /robot/lidar_3d/enable_point_cloud 'value: true'"/>  
+  <node pkg="rosservice" type="rosservice" name="rosservice_pc_front_camera" args="call --wait /robot/front_rgbd_camera/enable_point_cloud 'value: true'"/>  
+  <node pkg="rosservice" type="rosservice" name="rosservice_pc_rear_camera" args="call --wait /robot/rear_rgbd_camera/enable_point_cloud 'value: true'"/>  
+</launch>

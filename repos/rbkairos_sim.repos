@@ -2,7 +2,7 @@ repositories:
   src/rbkairos_sim:
     type: git
     url: https://github.com/RobotnikAutomation/rbkairos_sim
-    version: noetic-devel
+    version: webots
   src/egh_gripper_common:
     type: git
     url: https://github.com/RobotnikAutomation/egh_gripper_common

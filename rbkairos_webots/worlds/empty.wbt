@@ -1,0 +1,22 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "caster_wheel"
+      coulombFriction [
+        0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.18250511914910517 0.11500182636435165 0.9764560724462898 2.0384302188655723
+  position 3.2619165864286974 -6.87682869585305 1.902641733914906
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+}
