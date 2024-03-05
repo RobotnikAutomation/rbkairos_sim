@@ -180,8 +180,9 @@ include_directories(
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
-install (DIRECTORY
-    rbkairos_sim_bringup
+install (FILES
+    rbkairos_complete.launch
+    rbkairos_complete_webots.launch
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
